@@ -25,6 +25,8 @@
 		511BB38D1ACD1B2A008C8245 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB37D1ACD1B2A008C8245 /* UIImage+MultiFormat.m */; };
 		511BB38E1ACD1B2A008C8245 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB37F1ACD1B2A008C8245 /* UIImage+WebP.m */; };
 		511BB38F1ACD1B2A008C8245 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB3811ACD1B2A008C8245 /* UIImageView+WebCache.m */; };
+		511BB3941ACD2C61008C8245 /* WeiBoShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB3921ACD2C61008C8245 /* WeiBoShowCell.m */; };
+		511BB3951ACD2C61008C8245 /* WeiBoShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 511BB3931ACD2C61008C8245 /* WeiBoShowCell.xib */; };
 		51F3A6001ACAAFA5006EE56F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F3A5FF1ACAAFA5006EE56F /* main.m */; };
 		51F3A6031ACAAFA5006EE56F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F3A6021ACAAFA5006EE56F /* AppDelegate.m */; };
 		51F3A6061ACAAFA5006EE56F /* WBdemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51F3A6041ACAAFA5006EE56F /* WBdemo.xcdatamodeld */; };
@@ -124,6 +126,9 @@
 		511BB37F1ACD1B2A008C8245 /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		511BB3801ACD1B2A008C8245 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		511BB3811ACD1B2A008C8245 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		511BB3911ACD2C61008C8245 /* WeiBoShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiBoShowCell.h; sourceTree = "<group>"; };
+		511BB3921ACD2C61008C8245 /* WeiBoShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiBoShowCell.m; sourceTree = "<group>"; };
+		511BB3931ACD2C61008C8245 /* WeiBoShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeiBoShowCell.xib; sourceTree = "<group>"; };
 		51F3A5FA1ACAAFA5006EE56F /* WBdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F3A5FE1ACAAFA5006EE56F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51F3A5FF1ACAAFA5006EE56F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -297,6 +302,16 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		511BB3901ACD2C46008C8245 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				511BB3911ACD2C61008C8245 /* WeiBoShowCell.h */,
+				511BB3921ACD2C61008C8245 /* WeiBoShowCell.m */,
+				511BB3931ACD2C61008C8245 /* WeiBoShowCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		51F3A5F11ACAAFA5006EE56F = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +463,7 @@
 		51FF9B001ACBC26A00076C5E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				511BB3901ACD2C46008C8245 /* View */,
 				511BB3601ACD17D1008C8245 /* Login */,
 				51FF9B571ACBF1A100076C5E /* Homepage */,
 			);
@@ -659,6 +675,7 @@
 				51F3A60E1ACAAFA5006EE56F /* Images.xcassets in Resources */,
 				51FF9ADD1ACBC1D900076C5E /* MBProgressHUD_Icon-Small.png in Resources */,
 				51FF9AD71ACBC1D900076C5E /* MBProgressHUD_37x-Checkmark.png in Resources */,
+				511BB3951ACD2C61008C8245 /* WeiBoShowCell.xib in Resources */,
 				51FF9AD81ACBC1D900076C5E /* MBProgressHUD_37x-Checkmark@2x.png in Resources */,
 				51FF9ADE1ACBC1D900076C5E /* MBProgressHUD_Icon-Small@2x.png in Resources */,
 				51FF9ADB1ACBC1D900076C5E /* MBProgressHUD_error@3x.png in Resources */,
@@ -722,6 +739,7 @@
 				511BB38E1ACD1B2A008C8245 /* UIImage+WebP.m in Sources */,
 				51FF9B311ACBDE2100076C5E /* JSONTool.m in Sources */,
 				51F3A6001ACAAFA5006EE56F /* main.m in Sources */,
+				511BB3941ACD2C61008C8245 /* WeiBoShowCell.m in Sources */,
 				511BB3631ACD17D1008C8245 /* LoginWithOAuthVC.m in Sources */,
 				511BB35D1ACCEE27008C8245 /* NavigationController.m in Sources */,
 				51FF9AD61ACBC1D900076C5E /* MBProgressHUD.m in Sources */,

@@ -20,4 +20,14 @@
 
 #define GET_get_token_info [NSString stringWithFormat:@"%@/oauth2/get_token_info", HTTP_URL]
 
+//获取当前登录用户及其所关注用户的最新微博
+#define GET_statuses_home_timeline [NSString stringWithFormat:@"%@/2/statuses/home_timeline.json", HTTP_URL]
+
+//通过id获取用户信息
+#define GET_USERS_INFO_UID [NSString stringWithFormat:@"%@/2/users/show.json", HTTP_URL]
+
+//获取当前登录用户及其所关注用户的最新微博的ID
+#define GET_FRIENDS_TIMELINE [NSString stringWithFormat:@"%@/2/statuses/friends_timeline/ids.json", HTTP_URL]
+
+
 #endif

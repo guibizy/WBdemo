@@ -19,4 +19,10 @@ typedef void(^ErrorBlo)(NSError *error);
 //取消授权信息
 +(void)logoutOAuth2WithAccessToken:(NSString *)token successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock;
 
+//根据用户id获取用户信息
++(void)getUsersInfoWithId:(NSString *)token andUid:(NSString *)uid successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock;
+
+//获取当前登录用户及其所关注用户的最新微博
++(void)getUserHomeTimelineWhthAccessToken:(NSString *)token andCount:(NSInteger)count successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock;
+
 @end

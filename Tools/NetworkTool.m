@@ -16,11 +16,41 @@
 +(void)getAccessTokenWithURL:(NSDictionary *)dic successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
     [NetworkTool postWithURL:GET_access_token parameters:dic successBlock:successBlock error:errorBlock];
 }
+
+
 +(void)logoutOAuth2WithAccessToken:(NSString *)token successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
     NSDictionary * dic = @{@"access_token":token};
     [NetworkTool postWithURL:GET_revokeoauth2 parameters:dic successBlock:successBlock error:errorBlock];
 }
+
++(void)getUsersInfoWithId:(NSString *)token andUid:(NSString *)uid successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSDictionary *dic = @{@"access_token":token,
+                          @"uid":uid};
+    [NetworkTool getWithURL:GET_USERS_INFO_UID parameters:dic successBlock:successBlock error:errorBlock];
+}
+
++(void)getUserHomeTimelineWhthAccessToken:(NSString *)token andCount:(NSInteger)count successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSDictionary *dic = @{@"access_token":token,
+                          @"count":@(count)};
+    [NetworkTool getWithURL:GET_statuses_home_timeline parameters:dic successBlock:successBlock error:errorBlock];
+}
+
 #pragma mark -------
++ (void)getWithURL:(NSString *)url parameters:(NSDictionary *)par successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock {
+    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager GET:url parameters:par success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            DMLog(@"%@",responseObject);
+            successBlock(responseObject);
+        });
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            errorBlock(error);
+        });
+    }];
+}
 + (void)postWithURL:(NSString *)url parameters:(NSDictionary *)par successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock {
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];

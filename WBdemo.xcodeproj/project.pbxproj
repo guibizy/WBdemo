@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5112BFE61ACE2A90002D05C7 /* Homepage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5112BFE51ACE2A90002D05C7 /* Homepage.xcassets */; };
+		5112BFE91ACE3445002D05C7 /* CustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BFE81ACE3445002D05C7 /* CustomTabBar.m */; };
+		5112BFF01ACE390A002D05C7 /* HomeUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BFEE1ACE390A002D05C7 /* HomeUserInfoVC.m */; };
+		5112BFF11ACE390A002D05C7 /* HomeUserInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5112BFEF1ACE390A002D05C7 /* HomeUserInfoVC.xib */; };
+		5112BFF51ACE3DDB002D05C7 /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BFF31ACE3DDB002D05C7 /* UserInfoCell.m */; };
+		5112BFF61ACE3DDB002D05C7 /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5112BFF41ACE3DDB002D05C7 /* UserInfoCell.xib */; };
 		511BB3561ACCC620008C8245 /* SettingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB3551ACCC620008C8245 /* SettingTool.m */; };
 		511BB3591ACCCBE3008C8245 /* AccountOAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB3581ACCCBE3008C8245 /* AccountOAuthModel.m */; };
 		511BB35D1ACCEE27008C8245 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB35B1ACCEE27008C8245 /* NavigationController.m */; };
@@ -89,6 +95,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5112BFE51ACE2A90002D05C7 /* Homepage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Homepage.xcassets; sourceTree = "<group>"; };
+		5112BFE71ACE3445002D05C7 /* CustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBar.h; sourceTree = "<group>"; };
+		5112BFE81ACE3445002D05C7 /* CustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBar.m; sourceTree = "<group>"; };
+		5112BFED1ACE390A002D05C7 /* HomeUserInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeUserInfoVC.h; sourceTree = "<group>"; };
+		5112BFEE1ACE390A002D05C7 /* HomeUserInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeUserInfoVC.m; sourceTree = "<group>"; };
+		5112BFEF1ACE390A002D05C7 /* HomeUserInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeUserInfoVC.xib; sourceTree = "<group>"; };
+		5112BFF21ACE3DDB002D05C7 /* UserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoCell.h; sourceTree = "<group>"; };
+		5112BFF31ACE3DDB002D05C7 /* UserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoCell.m; sourceTree = "<group>"; };
+		5112BFF41ACE3DDB002D05C7 /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
 		511BB3541ACCC620008C8245 /* SettingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTool.h; sourceTree = "<group>"; };
 		511BB3551ACCC620008C8245 /* SettingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTool.m; sourceTree = "<group>"; };
 		511BB3571ACCCBE3008C8245 /* AccountOAuthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountOAuthModel.h; sourceTree = "<group>"; };
@@ -249,10 +264,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5112BFEA1ACE3691002D05C7 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		5112BFEB1ACE3691002D05C7 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		5112BFEC1ACE3691002D05C7 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5112BFED1ACE390A002D05C7 /* HomeUserInfoVC.h */,
+				5112BFEE1ACE390A002D05C7 /* HomeUserInfoVC.m */,
+				5112BFEF1ACE390A002D05C7 /* HomeUserInfoVC.xib */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		511BB35F1ACD1476008C8245 /* IMG */ = {
 			isa = PBXGroup;
 			children = (
 				51F3A60D1ACAAFA5006EE56F /* Images.xcassets */,
+				5112BFE51ACE2A90002D05C7 /* Homepage.xcassets */,
 			);
 			path = IMG;
 			sourceTree = "<group>";
@@ -308,6 +348,9 @@
 				511BB3911ACD2C61008C8245 /* WeiBoShowCell.h */,
 				511BB3921ACD2C61008C8245 /* WeiBoShowCell.m */,
 				511BB3931ACD2C61008C8245 /* WeiBoShowCell.xib */,
+				5112BFF21ACE3DDB002D05C7 /* UserInfoCell.h */,
+				5112BFF31ACE3DDB002D05C7 /* UserInfoCell.m */,
+				5112BFF41ACE3DDB002D05C7 /* UserInfoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -464,6 +507,9 @@
 			isa = PBXGroup;
 			children = (
 				511BB3901ACD2C46008C8245 /* View */,
+				5112BFEA1ACE3691002D05C7 /* Message */,
+				5112BFEB1ACE3691002D05C7 /* Search */,
+				5112BFEC1ACE3691002D05C7 /* User */,
 				511BB3601ACD17D1008C8245 /* Login */,
 				51FF9B571ACBF1A100076C5E /* Homepage */,
 			);
@@ -581,6 +627,8 @@
 		51FF9B571ACBF1A100076C5E /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				5112BFE71ACE3445002D05C7 /* CustomTabBar.h */,
+				5112BFE81ACE3445002D05C7 /* CustomTabBar.m */,
 				51FF9B581ACBF1DD00076C5E /* HomepageVC.h */,
 				51FF9B591ACBF1DD00076C5E /* HomepageVC.m */,
 				51FF9B5A1ACBF1DD00076C5E /* HomepageVC.xib */,
@@ -668,6 +716,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5112BFF11ACE390A002D05C7 /* HomeUserInfoVC.xib in Resources */,
 				51FF9ADF1ACBC1D900076C5E /* MBProgressHUD_Icon.png in Resources */,
 				51FF9AD91ACBC1D900076C5E /* MBProgressHUD_error.png in Resources */,
 				51FF9ADA1ACBC1D900076C5E /* MBProgressHUD_error@2x.png in Resources */,
@@ -675,7 +724,9 @@
 				51F3A60E1ACAAFA5006EE56F /* Images.xcassets in Resources */,
 				51FF9ADD1ACBC1D900076C5E /* MBProgressHUD_Icon-Small.png in Resources */,
 				51FF9AD71ACBC1D900076C5E /* MBProgressHUD_37x-Checkmark.png in Resources */,
+				5112BFF61ACE3DDB002D05C7 /* UserInfoCell.xib in Resources */,
 				511BB3951ACD2C61008C8245 /* WeiBoShowCell.xib in Resources */,
+				5112BFE61ACE2A90002D05C7 /* Homepage.xcassets in Resources */,
 				51FF9AD81ACBC1D900076C5E /* MBProgressHUD_37x-Checkmark@2x.png in Resources */,
 				51FF9ADE1ACBC1D900076C5E /* MBProgressHUD_Icon-Small@2x.png in Resources */,
 				51FF9ADB1ACBC1D900076C5E /* MBProgressHUD_error@3x.png in Resources */,
@@ -707,6 +758,7 @@
 				51F3A6061ACAAFA5006EE56F /* WBdemo.xcdatamodeld in Sources */,
 				51FF9B391ACBDE3100076C5E /* NSString+MD5.m in Sources */,
 				511BB38B1ACD1B2A008C8245 /* UIButton+WebCache.m in Sources */,
+				5112BFF51ACE3DDB002D05C7 /* UserInfoCell.m in Sources */,
 				51FF9B421ACBDE3B00076C5E /* FMDBSqlFactory.m in Sources */,
 				51FF9ACE1ACBC1D900076C5E /* AFHTTPRequestOperationManager.m in Sources */,
 				51FF9AD21ACBC1D900076C5E /* AFURLConnectionOperation.m in Sources */,
@@ -725,12 +777,14 @@
 				51FF9AD31ACBC1D900076C5E /* AFURLRequestSerialization.m in Sources */,
 				51FF9B531ACBEC1A00076C5E /* FMDatabaseQueue.m in Sources */,
 				51FF9B541ACBEC1A00076C5E /* FMResultSet.m in Sources */,
+				5112BFF01ACE390A002D05C7 /* HomeUserInfoVC.m in Sources */,
 				511BB3561ACCC620008C8245 /* SettingTool.m in Sources */,
 				51FF9ACF1ACBC1D900076C5E /* AFHTTPSessionManager.m in Sources */,
 				51FF9AD01ACBC1D900076C5E /* AFNetworkReachabilityManager.m in Sources */,
 				51FF9B351ACBDE2900076C5E /* LocalStorage.m in Sources */,
 				51FF9AD41ACBC1D900076C5E /* AFURLResponseSerialization.m in Sources */,
 				511BB3821ACD1B2A008C8245 /* MKAnnotationView+WebCache.m in Sources */,
+				5112BFE91ACE3445002D05C7 /* CustomTabBar.m in Sources */,
 				511BB38D1ACD1B2A008C8245 /* UIImage+MultiFormat.m in Sources */,
 				51FF9AD51ACBC1D900076C5E /* AFURLSessionManager.m in Sources */,
 				51FF9B5B1ACBF1DD00076C5E /* HomepageVC.m in Sources */,

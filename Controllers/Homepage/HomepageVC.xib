@@ -15,16 +15,23 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2nt-0l-J81">
-                    <rect key="frame" x="0.0" y="519" width="320" height="49"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <items>
-                        <tabBarItem systemItem="mostViewed" id="IjH-yZ-z1X"/>
-                        <tabBarItem systemItem="more" id="mgC-tl-sWU"/>
-                    </items>
-                </tabBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1MI-Tb-Wb9">
+                    <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <view key="tableFooterView" contentMode="scaleToFill" id="QoD-au-kGR">
+                        <rect key="frame" x="0.0" y="460" width="320" height="50"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1MI-Tb-Wb9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="3vI-Js-lkG"/>
+                <constraint firstItem="1MI-Tb-Wb9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9hM-Ov-dBT"/>
+                <constraint firstAttribute="bottom" secondItem="1MI-Tb-Wb9" secondAttribute="bottom" id="Bdf-96-nJq"/>
+                <constraint firstAttribute="trailing" secondItem="1MI-Tb-Wb9" secondAttribute="trailing" id="dcT-EJ-sVY"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="283" y="401"/>
         </view>

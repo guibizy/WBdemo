@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CustomTabBar.h"
+
 @interface NavigationController : UINavigationController
 
 -(void)login:(BOOL)status;

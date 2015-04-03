@@ -13,8 +13,9 @@
 #import "LoginWithOAuthVC.h"
 #import "AppDelegate.h"
 #import "NetworkTool.h"
+#import "WeiBoShowCell.h"
 
-@interface HomepageVC ()
+@interface HomepageVC ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -22,13 +23,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"疯一般的男子";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-- (IBAction)logoutOnClick:(id)sender {
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"_LoginOut" object:nil];
+#pragma mark tableview
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellname = @"weiboshowcell";
+    WeiBoShowCell *cell = [tableView dequeueReusableCellWithIdentifier:cellname];
+    if (!cell) {
+        [tableView registerNib:[UINib nibWithNibName:@"WeiBoShowCell" bundle:nil] forCellReuseIdentifier:cellname];
+        cell = [tableView dequeueReusableCellWithIdentifier:cellname];
+    }
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    return cell;
 }
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 20;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 2;
+}
 @end

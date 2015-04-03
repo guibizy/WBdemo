@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 #import "CustomTabBar.h"
+#import "LoginWithOAuthVC.h"
 
-@interface NavigationController : UINavigationController
+@interface NavigationController : UINavigationController<logindele>
 
 @property (strong,nonatomic) CustomTabBar *tabbar;
 

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol logindele<NSObject>
+
+-(void)loginLat;
+
+@end
+
 @interface LoginWithOAuthVC : UIViewController
+
+@property (nonatomic, weak) id<logindele> delegate;
 
 @end

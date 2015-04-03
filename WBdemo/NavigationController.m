@@ -15,6 +15,12 @@
 #import "SettingTool.h"
 #import "AccountOAuthModel.h"
 
+#import "HomepageVC.h"
+#import "MessageVC.h"
+#import "SearchVC.h"
+#import "HomeUserInfoVC.h"
+
+
 @interface NavigationController ()
 
 @end
@@ -25,6 +31,7 @@
     [super viewDidLoad];
 //    self.navigationBarHidden = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginout) name:@"_LoginOut" object:nil];
+    [self initTabBar];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,9 +43,9 @@
 }
 -(void)login:(BOOL)status{
     if (status) {
-        HomepageVC *login = [[HomepageVC alloc]init];
+        [self initTabBar];
         GetAppDelegate;
-        [appDelegate.navController pushViewController:login animated:YES];
+        [appDelegate.navController pushViewController:self.tabbar animated:YES];
     }
     else{
         LoginWithOAuthVC *login = [[LoginWithOAuthVC alloc]init];
@@ -70,5 +77,28 @@
     } error:^(NSError *error) {
         
     }];
+}
+-(void)loginLat{
+    [self initTabBar];
+    GetAppDelegate;
+    [appDelegate.navController pushViewController:self.tabbar animated:YES];
+}
+
+-(void)initTabBar{
+    HomepageVC *homepage = [[HomepageVC alloc]init];
+    MessageVC *message = [[MessageVC alloc]init];
+    SearchVC *search = [[SearchVC alloc]init];
+    HomeUserInfoVC *userinfo = [[HomeUserInfoVC alloc]init];
+    
+    NSMutableArray *controllers = [[NSMutableArray alloc]init];
+    [controllers addObject:homepage];
+    [controllers addObject:message];
+    [controllers addObject:search];
+    [controllers addObject:userinfo];
+    
+    
+    self.tabbar = [[CustomTabBar alloc] init];
+    self.tabbar.viewControllers = controllers;
+    self.tabbar.selectedIndex = 0;
 }
 @end

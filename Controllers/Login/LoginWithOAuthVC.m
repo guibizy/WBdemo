@@ -59,8 +59,7 @@
         [SettingTool setAccessToken:resultDic[@"access_token"]];
         [[AccountOAuthModel sharedInstance] setDic:resultDic];
         [MBProgressHUDTool dismiss];
-        GetAppDelegate;
-        [appDelegate.navController pushViewController:[[HomepageVC alloc]init] animated:YES];
+        [self.delegate loginLat];
     } error:^(NSError *error) {
         [MBProgressHUDTool showErrorWithStatus:[NSString stringWithFormat:@"%@",error]];
     }];

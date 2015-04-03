@@ -1,5 +1,5 @@
 //
-//  UserInfoCell.h
+//  MessageCellFirst.h
 //  WBdemo
 //
 //  Created by Nick on 15-4-3.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserInfoCell : UITableViewCell
-
+@interface MessageCellFirst : UITableViewCell
 
 @end

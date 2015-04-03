@@ -210,6 +210,7 @@
             imgbg2.image = nil;
             imgbg3.image = nil;
             imgbg4.image = nil;
+            imgbg5.image = nil;
             lab1.textColor = [UIColor whiteColor];
             img1.image = [UIImage imageNamed:@"footericon_1_down.png"];
             lab2.textColor = UICOLOR_RGBA(170, 170, 170, 1);
@@ -218,6 +219,8 @@
             img3.image = [UIImage imageNamed:@"footericon_3.png"];
             lab4.textColor = UICOLOR_RGBA(170, 170, 170, 1);
             img4.image = [UIImage imageNamed:@"footericon_4.png"];
+            lab5.textColor = UICOLOR_RGBA(170, 170, 170, 1);
+            img5.image = [UIImage imageNamed:@"footericon_5.png"];
         }
                 break;
         case 1:
@@ -226,6 +229,7 @@
             imgbg2.image = [UIImage imageNamed:@"footericon_bg.png"];
             imgbg3.image = nil;
             imgbg4.image = nil;
+            
             lab1.textColor = UICOLOR_RGBA(170, 170, 170, 1);
             img1.image = [UIImage imageNamed:@"footericon_1.png"];
             lab2.textColor = [UIColor whiteColor];
@@ -234,6 +238,8 @@
             img3.image = [UIImage imageNamed:@"footericon_3.png"];
             lab4.textColor = UICOLOR_RGBA(170, 170, 170, 1);
             img4.image = [UIImage imageNamed:@"footericon_4.png"];
+            lab5.textColor = UICOLOR_RGBA(170, 170, 170, 1);
+            img5.image = [UIImage imageNamed:@"footericon_5.png"];
         }
             break;
         case 2:
@@ -243,6 +249,7 @@
             imgbg2.image = nil;
             imgbg3.image = [UIImage imageNamed:@"footericon_bg.png"];
             imgbg4.image = nil;
+            imgbg5.image = nil;
             lab1.textColor = UICOLOR_RGBA(170, 170, 170, 1);
             img1.image = [UIImage imageNamed:@"footericon_1.png"];
             lab2.textColor = UICOLOR_RGBA(170, 170, 170, 1);
@@ -251,6 +258,8 @@
             img3.image = [UIImage imageNamed:@"footericon_3_down.png"];
             lab4.textColor = UICOLOR_RGBA(170, 170, 170, 1);
             img4.image = [UIImage imageNamed:@"footericon_4.png"];
+            lab5.textColor = UICOLOR_RGBA(170, 170, 170, 1);
+            img5.image = [UIImage imageNamed:@"footericon_4.png"];
         }
             
             break;
@@ -260,6 +269,7 @@
             imgbg2.image = nil;
             imgbg3.image = nil;
             imgbg4.image = [UIImage imageNamed:@"footericon_bg.png"];
+            imgbg5.image = nil;
             lab1.textColor = UICOLOR_RGBA(170, 170, 170, 1);
             img1.image = [UIImage imageNamed:@"footericon_1.png"];
             lab2.textColor = UICOLOR_RGBA(170, 170, 170, 1);
@@ -268,6 +278,27 @@
             img3.image = [UIImage imageNamed:@"footericon_3.png"];
             lab4.textColor = [UIColor whiteColor];
             img4.image = [UIImage imageNamed:@"footericon_4_down.png"];
+            lab5.textColor = UICOLOR_RGBA(170, 170, 170, 1);
+            img5.image = [UIImage imageNamed:@"footericon_5.png"];
+        }
+            break;
+        case 4:
+        {
+            imgbg1.image = nil;
+            imgbg2.image = nil;
+            imgbg3.image = nil;
+            imgbg4.image = nil;
+            imgbg5.image = [UIImage imageNamed:@"footericon_bg.png"];
+            lab1.textColor = UICOLOR_RGBA(170, 170, 170, 1);
+            img1.image = [UIImage imageNamed:@"footericon_1.png"];
+            lab2.textColor = UICOLOR_RGBA(170, 170, 170, 1);
+            img2.image = [UIImage imageNamed:@"footericon_2.png"];
+            lab3.textColor = UICOLOR_RGBA(170, 170, 170, 1);
+            img3.image = [UIImage imageNamed:@"footericon_3.png"];
+            lab4.textColor = [UIColor whiteColor];
+            img4.image = [UIImage imageNamed:@"footericon_4.png"];
+            lab5.textColor = UICOLOR_RGBA(170, 170, 170, 1);
+            img5.image = [UIImage imageNamed:@"footericon_5_down.png"];
         }
             break;
         default:

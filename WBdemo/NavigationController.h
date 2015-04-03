@@ -12,6 +12,8 @@
 
 @interface NavigationController : UINavigationController
 
+@property (strong,nonatomic) CustomTabBar *tabbar;
+
 -(void)login:(BOOL)status;
 -(void)loginout;
 

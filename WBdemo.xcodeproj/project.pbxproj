@@ -13,6 +13,12 @@
 		5112BFF11ACE390A002D05C7 /* HomeUserInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5112BFEF1ACE390A002D05C7 /* HomeUserInfoVC.xib */; };
 		5112BFF51ACE3DDB002D05C7 /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BFF31ACE3DDB002D05C7 /* UserInfoCell.m */; };
 		5112BFF61ACE3DDB002D05C7 /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5112BFF41ACE3DDB002D05C7 /* UserInfoCell.xib */; };
+		5112BFFA1ACE6297002D05C7 /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BFF81ACE6297002D05C7 /* MessageVC.m */; };
+		5112BFFB1ACE6297002D05C7 /* MessageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5112BFF91ACE6297002D05C7 /* MessageVC.xib */; };
+		5112BFFF1ACE631F002D05C7 /* MessageCellFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BFFD1ACE631F002D05C7 /* MessageCellFirst.m */; };
+		5112C0001ACE631F002D05C7 /* MessageCellFirst.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5112BFFE1ACE631F002D05C7 /* MessageCellFirst.xib */; };
+		5112C0091ACE695C002D05C7 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112C0071ACE695C002D05C7 /* SearchVC.m */; };
+		5112C00A1ACE695C002D05C7 /* SearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5112C0081ACE695C002D05C7 /* SearchVC.xib */; };
 		511BB3561ACCC620008C8245 /* SettingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB3551ACCC620008C8245 /* SettingTool.m */; };
 		511BB3591ACCCBE3008C8245 /* AccountOAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB3581ACCCBE3008C8245 /* AccountOAuthModel.m */; };
 		511BB35D1ACCEE27008C8245 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB35B1ACCEE27008C8245 /* NavigationController.m */; };
@@ -104,6 +110,15 @@
 		5112BFF21ACE3DDB002D05C7 /* UserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoCell.h; sourceTree = "<group>"; };
 		5112BFF31ACE3DDB002D05C7 /* UserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoCell.m; sourceTree = "<group>"; };
 		5112BFF41ACE3DDB002D05C7 /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
+		5112BFF71ACE6297002D05C7 /* MessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVC.h; sourceTree = "<group>"; };
+		5112BFF81ACE6297002D05C7 /* MessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
+		5112BFF91ACE6297002D05C7 /* MessageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageVC.xib; sourceTree = "<group>"; };
+		5112BFFC1ACE631F002D05C7 /* MessageCellFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCellFirst.h; sourceTree = "<group>"; };
+		5112BFFD1ACE631F002D05C7 /* MessageCellFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCellFirst.m; sourceTree = "<group>"; };
+		5112BFFE1ACE631F002D05C7 /* MessageCellFirst.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCellFirst.xib; sourceTree = "<group>"; };
+		5112C0061ACE695C002D05C7 /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
+		5112C0071ACE695C002D05C7 /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
+		5112C0081ACE695C002D05C7 /* SearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchVC.xib; sourceTree = "<group>"; };
 		511BB3541ACCC620008C8245 /* SettingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTool.h; sourceTree = "<group>"; };
 		511BB3551ACCC620008C8245 /* SettingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTool.m; sourceTree = "<group>"; };
 		511BB3571ACCCBE3008C8245 /* AccountOAuthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountOAuthModel.h; sourceTree = "<group>"; };
@@ -267,6 +282,9 @@
 		5112BFEA1ACE3691002D05C7 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				5112BFF71ACE6297002D05C7 /* MessageVC.h */,
+				5112BFF81ACE6297002D05C7 /* MessageVC.m */,
+				5112BFF91ACE6297002D05C7 /* MessageVC.xib */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -274,6 +292,9 @@
 		5112BFEB1ACE3691002D05C7 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				5112C0061ACE695C002D05C7 /* SearchVC.h */,
+				5112C0071ACE695C002D05C7 /* SearchVC.m */,
+				5112C0081ACE695C002D05C7 /* SearchVC.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -351,6 +372,9 @@
 				5112BFF21ACE3DDB002D05C7 /* UserInfoCell.h */,
 				5112BFF31ACE3DDB002D05C7 /* UserInfoCell.m */,
 				5112BFF41ACE3DDB002D05C7 /* UserInfoCell.xib */,
+				5112BFFC1ACE631F002D05C7 /* MessageCellFirst.h */,
+				5112BFFD1ACE631F002D05C7 /* MessageCellFirst.m */,
+				5112BFFE1ACE631F002D05C7 /* MessageCellFirst.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -716,18 +740,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5112C00A1ACE695C002D05C7 /* SearchVC.xib in Resources */,
 				5112BFF11ACE390A002D05C7 /* HomeUserInfoVC.xib in Resources */,
 				51FF9ADF1ACBC1D900076C5E /* MBProgressHUD_Icon.png in Resources */,
 				51FF9AD91ACBC1D900076C5E /* MBProgressHUD_error.png in Resources */,
 				51FF9ADA1ACBC1D900076C5E /* MBProgressHUD_error@2x.png in Resources */,
 				51FF9AE01ACBC1D900076C5E /* MBProgressHUD_Icon@2x.png in Resources */,
 				51F3A60E1ACAAFA5006EE56F /* Images.xcassets in Resources */,
+				5112BFFB1ACE6297002D05C7 /* MessageVC.xib in Resources */,
 				51FF9ADD1ACBC1D900076C5E /* MBProgressHUD_Icon-Small.png in Resources */,
 				51FF9AD71ACBC1D900076C5E /* MBProgressHUD_37x-Checkmark.png in Resources */,
 				5112BFF61ACE3DDB002D05C7 /* UserInfoCell.xib in Resources */,
 				511BB3951ACD2C61008C8245 /* WeiBoShowCell.xib in Resources */,
 				5112BFE61ACE2A90002D05C7 /* Homepage.xcassets in Resources */,
 				51FF9AD81ACBC1D900076C5E /* MBProgressHUD_37x-Checkmark@2x.png in Resources */,
+				5112C0001ACE631F002D05C7 /* MessageCellFirst.xib in Resources */,
 				51FF9ADE1ACBC1D900076C5E /* MBProgressHUD_Icon-Small@2x.png in Resources */,
 				51FF9ADB1ACBC1D900076C5E /* MBProgressHUD_error@3x.png in Resources */,
 				51FF9ADC1ACBC1D900076C5E /* MBProgressHUD_Icon-iOS7@2x.png in Resources */,
@@ -751,6 +778,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51F3A6031ACAAFA5006EE56F /* AppDelegate.m in Sources */,
+				5112C0091ACE695C002D05C7 /* SearchVC.m in Sources */,
 				51FF9B411ACBDE3B00076C5E /* FMDBFactory.m in Sources */,
 				51FF9B031ACBC3C700076C5E /* MBProgressHUDTool.m in Sources */,
 				51FF9B2D1ACBDD6500076C5E /* NetworkTool.m in Sources */,
@@ -782,6 +810,7 @@
 				51FF9ACF1ACBC1D900076C5E /* AFHTTPSessionManager.m in Sources */,
 				51FF9AD01ACBC1D900076C5E /* AFNetworkReachabilityManager.m in Sources */,
 				51FF9B351ACBDE2900076C5E /* LocalStorage.m in Sources */,
+				5112BFFA1ACE6297002D05C7 /* MessageVC.m in Sources */,
 				51FF9AD41ACBC1D900076C5E /* AFURLResponseSerialization.m in Sources */,
 				511BB3821ACD1B2A008C8245 /* MKAnnotationView+WebCache.m in Sources */,
 				5112BFE91ACE3445002D05C7 /* CustomTabBar.m in Sources */,
@@ -795,6 +824,7 @@
 				51F3A6001ACAAFA5006EE56F /* main.m in Sources */,
 				511BB3941ACD2C61008C8245 /* WeiBoShowCell.m in Sources */,
 				511BB3631ACD17D1008C8245 /* LoginWithOAuthVC.m in Sources */,
+				5112BFFF1ACE631F002D05C7 /* MessageCellFirst.m in Sources */,
 				511BB35D1ACCEE27008C8245 /* NavigationController.m in Sources */,
 				51FF9AD61ACBC1D900076C5E /* MBProgressHUD.m in Sources */,
 				51FF9AFE1ACBC22A00076C5E /* Define.m in Sources */,

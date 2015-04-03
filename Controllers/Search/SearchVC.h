@@ -1,5 +1,5 @@
 //
-//  UserInfoCell.h
+//  SearchVC.h
 //  WBdemo
 //
 //  Created by Nick on 15-4-3.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserInfoCell : UITableViewCell
-
+@interface SearchVC : UIViewController
 
 @end

@@ -20,15 +20,14 @@
 @property(copy, nonatomic) NSString *_description;//用户个人描述
 @property(copy, nonatomic) NSString *url;//用户博客地址
 @property(copy, nonatomic) NSString *profile_image_url;//用户头像地址
-//@property(copy, nonatomic) NSString * coverImageUrl;
-//@property(copy, nonatomic) NSString * coverImageForPhoneUrl;
+
 @property(copy, nonatomic) NSString *profile_url ;// 	用户的微博统一URL地址
 @property(copy, nonatomic) NSString *domain;//用户的个性化域名
 @property(copy, nonatomic) NSString *weihao;
 @property(copy, nonatomic) NSString *gender;
 @property(assign, nonatomic) NSInteger followers_count;//粉丝数
 @property(assign, nonatomic) NSInteger friends_count;//关注数
-//@property(copy, nonatomic) NSString * pageFriendsCount;
+
 @property(assign, nonatomic) NSInteger statuses_count;//微博数
 @property(assign, nonatomic) NSInteger favourites_count;//收藏数
 @property(readwrite, assign, nonatomic) BOOL follow_me;//该用户是否关注当前登录用户

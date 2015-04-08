@@ -29,7 +29,10 @@
 @property (assign, nonatomic) NSInteger comments_count;//评论数
 @property (assign, nonatomic) NSInteger attitudes_count;//表态数
 
+@property(strong, nonatomic) NSArray *pic_ids;
+
 @property (strong, nonatomic) AccountUserModel *user;
+@property (strong, nonatomic) NSDictionary *retweeted_status;
 
 -(void)setDic:(NSDictionary *)dic;
 +(void)initSetDic:(NSDictionary *)dic;

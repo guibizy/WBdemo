@@ -31,6 +31,7 @@
         self.comments_count = 0;
         self.attitudes_count = 0;
         self.user = [[AccountUserModel alloc]init];
+        self.retweeted_status = [NSDictionary dictionary];
     }
     return self;
 }
@@ -56,6 +57,21 @@
     SET_DIC_INTERGET_KEY(dic, self.reposts_count, @"reposts_count");
     SET_DIC_INTERGET_KEY(dic, self.comments_count, @"comments_count");
     SET_DIC_INTERGET_KEY(dic, self.attitudes_count, @"attitudes_count");
+    
+    NSArray *picids = nil;
+    SET_DIC_ARRAY_KEY(dic, picids, @"pic_urls");
+    if (picids != nil && (NSNull *)picids != [NSNull null]) {
+        NSMutableArray *picArr = [NSMutableArray arrayWithCapacity:picids.count];
+        for (NSDictionary *picDic in picids) {
+            NSString *onepic = [picDic objectForKey:@"thumbnail_pic"];
+            [picArr addObject:onepic];
+        }
+        self.pic_ids = picArr;
+    }else{
+        self.pic_ids = nil;
+    }
+    
+    SET_DIC_DICTIONARY_KEY(dic, self.retweeted_status, @"retweeted_status");
     
     NSDictionary *oneuser = nil;
     SET_DIC_DICTIONARY_KEY(dic, oneuser, @"user");

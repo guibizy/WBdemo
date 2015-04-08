@@ -33,6 +33,7 @@
         self.statuses_count = 0;
         self.favourites_count = 0;
         self.follow_me = NO;
+        
     }
     return self;
 }

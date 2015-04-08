@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class AccountModel;
+
 @interface WeiBoShowCell : UITableViewCell
+
+-(void)setCellValue:(AccountModel *)model;
++(float)getCellHeight:(AccountModel *)model;
 
 @end

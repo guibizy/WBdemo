@@ -31,7 +31,6 @@
     [super viewDidLoad];
 //    self.navigationBarHidden = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginout) name:@"_LoginOut" object:nil];
-    [self initTabBar];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,7 +40,7 @@
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"_LoginOut" object:nil];
 }
--(void)login:(BOOL)status{
+-(void)loginI:(BOOL)status{
     if (status) {
         [self initTabBar];
         GetAppDelegate;
@@ -79,9 +78,7 @@
     }];
 }
 -(void)loginLat{
-    [self initTabBar];
-    GetAppDelegate;
-    [appDelegate.navController pushViewController:self.tabbar animated:YES];
+    [self loginI:YES];
 }
 
 -(void)initTabBar{

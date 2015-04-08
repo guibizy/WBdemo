@@ -43,63 +43,71 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqq-fq-IHs">
                                 <rect key="frame" x="56" y="8" width="54" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1111" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3y-0l-qTh">
-                                <rect key="frame" x="56" y="28" width="27" height="20"/>
+                                <rect key="frame" x="56" y="28" width="23" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="9jP-qX-jPo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="10"/>
                                 <color key="textColor" red="1" green="0.75686281919999998" blue="0.24313727020000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vR-3L-RiL">
-                                <rect key="frame" x="91" y="28" width="33" height="20"/>
+                                <rect key="frame" x="87" y="28" width="27" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="X1f-Dn-Ojb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="10"/>
                                 <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuP-YV-NWn">
-                                <rect key="frame" x="8" y="56" width="301" height="16"/>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuP-YV-NWn">
+                                <rect key="frame" x="8" y="56" width="301" height="15"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="343-PP-MvN">
+                                <rect key="frame" x="8" y="85" width="301" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XFc-nX-DUr"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1k-ON-ypS">
                                 <rect key="frame" x="0.0" y="125" width="317" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7C-s9-kpL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7C-s9-kpL">
                                         <rect key="frame" x="8" y="8" width="301" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="4em-jL-p7e"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXg-L6-gfQ">
-                                        <rect key="frame" x="8" y="8" width="59" height="20"/>
+                                        <rect key="frame" x="8" y="8" width="56" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="4AH-Ge-XZ4"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ao-7h-7yp">
-                                        <rect key="frame" x="8" y="8" width="59" height="20"/>
+                                        <rect key="frame" x="8" y="8" width="56" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="ptH-DR-0NF"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.53393020072992692" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk1-VF-yWD">
-                                        <rect key="frame" x="8" y="8" width="59" height="20"/>
+                                        <rect key="frame" x="8" y="8" width="56" height="20"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -320,13 +328,6 @@
                                     <constraint firstItem="xnk-r2-s3L" firstAttribute="leading" secondItem="dxp-Ua-P6v" secondAttribute="leading" id="vNq-GZ-PFx"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="343-PP-MvN">
-                                <rect key="frame" x="8" y="85" width="301" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="XFc-nX-DUr"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -369,6 +370,23 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="attitudesCountLab" destination="Ir3-7n-I6s" id="fFh-Lp-yqO"/>
+                <outlet property="commentsCountLab" destination="LMW-vR-oqc" id="pH4-uU-i5A"/>
+                <outlet property="createdLab" destination="y3y-0l-qTh" id="kg4-BS-Yrz"/>
+                <outlet property="profileBtn" destination="VuQ-a7-8Ub" id="gtt-mW-1Qc"/>
+                <outlet property="profileImg" destination="uDd-sl-0pO" id="U4v-lw-Lxo"/>
+                <outlet property="remindStatusHeight" destination="frf-fm-ZVX" id="va9-wO-XeW"/>
+                <outlet property="remindStatusView" destination="f1k-ON-ypS" id="wUC-QY-CMu"/>
+                <outlet property="repostsCountLab" destination="FsG-sX-6OU" id="J1V-Mz-7Al"/>
+                <outlet property="screenNameBtn" destination="Tqq-fq-IHs" id="8e4-Rk-WwI"/>
+                <outlet property="screenNameLab" destination="EYO-WK-yG5" id="7ZM-EZ-HBr"/>
+                <outlet property="sourceLab" destination="6vR-3L-RiL" id="jiM-vq-Mk8"/>
+                <outlet property="statusView" destination="343-PP-MvN" id="r6I-iV-HHa"/>
+                <outlet property="statusViewHeight" destination="XFc-nX-DUr" id="upp-qJ-Rpd"/>
+                <outlet property="textLab" destination="fuP-YV-NWn" id="zKU-9b-pRL"/>
+                <outlet property="tipHeight" destination="oHE-zc-vt3" id="Mtu-2w-fQH"/>
+            </connections>
             <point key="canvasLocation" x="264.5" y="263.5"/>
         </tableViewCell>
     </objects>

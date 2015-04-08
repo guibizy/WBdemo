@@ -29,9 +29,16 @@
     [NetworkTool getWithURL:GET_USERS_INFO_UID parameters:dic successBlock:successBlock error:errorBlock];
 }
 
-+(void)getUserHomeTimelineWhthAccessToken:(NSString *)token andCount:(NSInteger)count successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
-    NSDictionary *dic = @{@"access_token":token,
-                          @"count":@(count)};
++(void)getUserHomeTimelineWhthAccessToken:(NSString *)token andCount:(NSInteger)homeCount
+                            andPage:(NSInteger)page successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue:token forKey:@"access_token"];
+    if (homeCount > 0) {
+        [dic setValue:@(homeCount) forKey:@"count"];
+    }
+    if (page > 0) {
+        [dic setValue:@(page) forKey:@"page"];
+    }
     [NetworkTool getWithURL:GET_statuses_home_timeline parameters:dic successBlock:successBlock error:errorBlock];
 }
 

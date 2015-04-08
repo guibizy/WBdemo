@@ -373,16 +373,4 @@
 //    [appDelegate.navViewContrller pushViewController:shop animated:YES];
 }
 
-#pragma mark - notification
-
-- (void)reviceMessageCount:(NSNotification*)notification {
-    NSDictionary *info = [notification userInfo];
-    NSInteger count = [[info objectForKey:@"num"] integerValue];
-    if (count == 0) {
-        self.circleImg.hidden = YES;
-    } else {
-        self.circleImg.hidden = NO;
-    }
-}
-
 @end

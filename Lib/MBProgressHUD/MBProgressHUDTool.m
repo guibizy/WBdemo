@@ -58,34 +58,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(MBProgressHUDTool);
         [HUD removeFromSuperview];
     }];
 }
-
-#pragma mark - 自增动画效果 by huds
-+ (UIImageView *)makeAnimation {
-    //连续动画:一个接一个地显示一系列的图像
-    NSArray *myImages = [NSArray arrayWithObjects:
-                         [UIImage imageNamed:@"loading_animation_1"],
-                         [UIImage imageNamed:@"loading_animation_2"],
-                         [UIImage imageNamed:@"loading_animation_3"],
-                         [UIImage imageNamed:@"loading_animation_4"],
-                         [UIImage imageNamed:@"loading_animation_5"],
-                         [UIImage imageNamed:@"loading_animation_6"],
-                         [UIImage imageNamed:@"loading_animation_7"],
-                         [UIImage imageNamed:@"loading_animation_8"],
-                         [UIImage imageNamed:@"loading_animation_9"],
-                         [UIImage imageNamed:@"loading_animation_10"],
-                         [UIImage imageNamed:@"loading_animation_11"],
-                         [UIImage imageNamed:@"loading_animation_12"],
-                         [UIImage imageNamed:@"loading_animation_13"],
-                         [UIImage imageNamed:@"loading_animation_14"],nil];
-    
-    UIImageView *myAnimatedView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 63)];
-    myAnimatedView.animationImages = myImages; //animationImages属性返回一个存放动画图片的数组
-    myAnimatedView.animationDuration = 1.0; //浏览整个图片一次所用的时间
-    myAnimatedView.animationRepeatCount = 0; // 0 = loops forever 动画重复次数
-    [myAnimatedView startAnimating];
-    return myAnimatedView;
-}
-
 + (void)showErrorWithStatus:(NSString *)status {
     [MBProgressHUDTool dismiss];
     

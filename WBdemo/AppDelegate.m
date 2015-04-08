@@ -36,10 +36,10 @@
         }
     }
     if (loginstatus) {
-        [self.navController login:loginstatus];
+        [self.navController loginI:loginstatus];
     }
     else{
-        [self.navController login:loginstatus];
+        [self.navController loginI:loginstatus];
     }
     return YES;
 }

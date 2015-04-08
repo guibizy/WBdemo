@@ -15,7 +15,7 @@
 
 @property (strong,nonatomic) CustomTabBar *tabbar;
 
--(void)login:(BOOL)status;
+-(void)loginI:(BOOL)status;
 -(void)loginout;
 
 @end

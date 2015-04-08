@@ -43,7 +43,7 @@
         NSInteger loc = range.location + range.length;
         NSString *code = [urlStr substringFromIndex:loc];
         [self accessOAuthWithCode:code];
-        return NO;
+        return YES;
     }
     return YES;
 }
@@ -54,7 +54,7 @@
     dic[@"grant_type"] = @"authorization_code";
     dic[@"code"] = code;
     dic[@"redirect_uri"] = gRedirectURI;
-    [MBProgressHUDTool showWithStatus:nil needBackground:YES];
+    [MBProgressHUDTool showWithStatus:@"" needBackground:YES];
     [NetworkTool getAccessTokenWithURL:dic successBlock:^(NSDictionary *resultDic) {
         [SettingTool setAccessToken:resultDic[@"access_token"]];
         [[AccountOAuthModel sharedInstance] setDic:resultDic];

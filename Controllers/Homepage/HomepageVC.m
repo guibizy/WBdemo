@@ -40,7 +40,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"疯一般的男子";
+
+    self.navigationController.navigationBarHidden = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView addHeaderWithCallback:^{
@@ -69,7 +70,7 @@
     }else{
         page = self.accountUserArray.count/PAGE_NUM + 1;
     }
-    [NetworkTool getUserHomeTimelineWhthAccessToken:[SettingTool getAccessToken] andCount:PAGE_NUM andPage:page successBlock:^(NSDictionary *resultDic) {
+    [NetworkTool getUserHomeTimelineWhthAccessToken:[SettingTool getAccessToken] andCount:2 andPage:page successBlock:^(NSDictionary *resultDic) {
         [self.tableView headerEndRefreshing];
         [self.tableView footerEndRefreshing];
         if (resultDic[@"statuses"] != nil && resultDic[@"statuses"] != [NSNull null]) {
@@ -99,6 +100,15 @@
         cell = [tableView dequeueReusableCellWithIdentifier:cellname];
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    cell.repostsCallBackBlock = ^(AccountModel *model,UITableViewCell *cell){
+        
+    };
+    cell.commentsCallBackBlock = ^(AccountModel *model,UITableViewCell *cell){
+
+    };
+    cell.attitudesCallBackBlock = ^(AccountModel *model,UITableViewCell *cell){
+        [self attitudesCallBackSelectetor:model andCell:cell];
+    };
     [cell setCellValue:[self.accountUserArray objectAtIndex:indexPath.row]];
     return cell;
 }
@@ -108,5 +118,15 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.accountUserArray.count;
+}
+#pragma mark callback-selector
+-(void)repostsCallBackSelectetor{
+    
+}
+-(void)commentsCallBackSelectetor{
+    
+}
+-(void)attitudesCallBackSelectetor:(AccountModel *)model andCell:(UITableViewCell *)cell{
+    
 }
 @end

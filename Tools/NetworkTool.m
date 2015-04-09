@@ -42,6 +42,23 @@
     [NetworkTool getWithURL:GET_statuses_home_timeline parameters:dic successBlock:successBlock error:errorBlock];
 }
 
++(void)getCommentsShowWhthAccessTokenAndID:(NSString *)token
+                                     andID:(long long)_id
+                                  andCount:(NSInteger)homeCount
+                                   andPage:(NSInteger)page
+                              successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue:token forKey:@"access_token"];
+    [dic setValue:@(_id) forKey:@"id"];
+    if (homeCount > 0) {
+        [dic setValue:@(homeCount) forKey:@"count"];
+    }
+    if (page > 0) {
+        [dic setValue:@(page) forKey:@"page"];
+    }
+    [NetworkTool getWithURL:GET_COMMENTS_SHOW parameters:dic successBlock:successBlock error:errorBlock];
+}
+
 #pragma mark -------
 + (void)getWithURL:(NSString *)url parameters:(NSDictionary *)par successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock {
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];

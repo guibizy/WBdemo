@@ -37,14 +37,13 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *remindStatusHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tipHeight;
 
-@property (weak, nonatomic) IBOutlet UILabel *retweedNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *retweedTextLab;
 @property (weak, nonatomic) IBOutlet UIView *retweedImgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *retweedImgVHeight;
 
 @property (strong, nonatomic) UIImageView *exImgV;
 
-//@property (strong, nonatomic) AccountModel *oneAccountModel;
+@property (strong, nonatomic) AccountModel *oneAccountModel;
 
 @end
 
@@ -54,7 +53,7 @@
 {
     self = [super init];
     if (self) {
-//        self.oneAccountModel = [[AccountModel alloc]init];
+        self.oneAccountModel = [[AccountModel alloc]init];
     }
     return self;
 }
@@ -67,6 +66,9 @@
     [super setSelected:selected animated:animated];
 }
 -(void)setCellValue:(AccountModel *)model{
+    
+    self.oneAccountModel = model;
+    
     AccountModel *oneModel = [[AccountModel alloc]init];
     [oneModel setDic:model.retweeted_status];
     
@@ -91,9 +93,14 @@
     }
     
     NSRange rangF = [model.source rangeOfString:@"\">"];
-    NSRange rangS = [model.source rangeOfString:@"</a>"];
-    NSString *sourceTx = [model.source substringWithRange:NSMakeRange((rangF.location + rangF.length), rangS.location - rangF.location - rangF.length)];
-    self.sourceLab.text = [NSString stringWithFormat:@"来自 %@",sourceTx];
+    NSInteger loc = rangF.location + rangF.length;
+    if (rangF.location != NSNotFound) {
+        NSString *sourceTx = [model.source substringWithRange:NSMakeRange(loc,model.source.length - loc - 4)];
+        self.sourceLab.text = [NSString stringWithFormat:@"来自 %@",sourceTx];
+    }else{
+        self.sourceLab.text = [NSString stringWithFormat:@"来自 %@",model.source];
+    }
+
     self.textLab.text = model.text;
     
     self.statusViewHeight.constant = 0;
@@ -131,10 +138,16 @@
         self.statusView.hidden = YES;
     }
     //转发图片
-    if (oneModel._id > 0) {
+    if (oneModel._id > 0.f) {
         self.remindStatusView.hidden = NO;
-        self.retweedNameLab.text = [NSString stringWithFormat:@"%@:",oneModel.user.screen_name];
-        self.retweedTextLab.text = [NSString stringWithFormat:@"%@:%@",oneModel.user.screen_name,oneModel.text];
+        
+        NSString *screenName = oneModel.user.screen_name;
+        NSInteger length = screenName.length;
+        NSString *textStr = [NSString stringWithFormat:@"@%@:%@",oneModel.user.screen_name,oneModel.text];
+        NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:textStr];
+        [content addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0/255.0 green:122/255.0 blue:255/255.0 alpha:1.0] range:NSMakeRange(0, length+2)];
+        
+        self.retweedTextLab.attributedText = content;
         if (oneModel.pic_ids != nil && oneModel.pic_ids.count > 0) {
             self.retweedImgView.hidden = NO;
             for (UIView *view in self.retweedImgView.subviews) {
@@ -172,9 +185,9 @@
         }
         picidsHeight = column * (ImgHeight + 8);
     }
-    if (oneModel._id > 0) {
+    if (oneModel._id > 0.f) {
         remindHeight = InCellViewHeight;
-        retweetedTextHeight = [Define getTextViewHeightWithMessage:oneModel.text width:SCREEN_WIDTH - 16 font:[UIFont fontWithName:@"STHeitiTC-Light" size:15.0] mixHight:15];
+        retweetedTextHeight = [Define getTextViewHeightWithMessage:[NSString stringWithFormat:@"%@:%@",oneModel.user.screen_name,oneModel.text] width:SCREEN_WIDTH - 16 font:[UIFont fontWithName:@"STHeitiTC-Light" size:15.0] mixHight:17];
         int num = oneModel.pic_ids.count;
         int column = 0;
         if (num%LineImgNum > 0) {
@@ -229,7 +242,7 @@
         self.statusViewHeight.constant = column * (ImgHeight + 8);
     }
     if (oneview == self.remindStatusView) {
-        CGFloat retweetedTextHeight = [Define getTextViewHeightWithMessage:model.text width:SCREEN_WIDTH - 16 font:[UIFont fontWithName:@"STHeitiTC-Light" size:15.0] mixHight:15];
+        CGFloat retweetedTextHeight = [Define getTextViewHeightWithMessage:[NSString stringWithFormat:@"%@:%@",model.user.screen_name,model.text] width:SCREEN_WIDTH - 16 font:[UIFont fontWithName:@"STHeitiTC-Light" size:15.0] mixHight:17];
         self.retweedImgVHeight.constant = column * (ImgHeight + 8);
         self.remindStatusHeight.constant = InCellViewHeight + column * (ImgHeight + 8) + retweetedTextHeight;
     }
@@ -255,5 +268,23 @@
 //    if (model.pic_ids.count > 1) {
 //        
 //    }
+}
+//转发
+- (IBAction)repostsOnClick:(UIButton *)sender {
+    if (self.repostsCallBackBlock) {
+        self.repostsCallBackBlock(self.oneAccountModel,self);
+    }
+}
+//评论
+- (IBAction)commentsOnClick:(UIButton *)sender {
+    if (self.commentsCallBackBlock) {
+        self.commentsCallBackBlock(self.oneAccountModel,self);
+    }
+}
+//点赞
+- (IBAction)attitudesOnClick:(UIButton *)sender {
+    if (self.attitudesCallBackBlock) {
+        self.attitudesCallBackBlock(self.oneAccountModel,self);
+    }
 }
 @end

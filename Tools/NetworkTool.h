@@ -33,4 +33,14 @@ typedef void(^ErrorBlo)(NSError *error);
                                   andPage:(NSInteger)page
                              successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock;
 
+//根据微博ID返回某条微博的评论列表
+/*
+ 只返回授权用户的评论，非授权用户的评论将不返回；
+ 使用官方移动SDK调用，可多返回30%的非授权用户的评论；
+ */
++(void)getCommentsShowWhthAccessTokenAndID:(NSString *)token
+                                     andID:(long long)_id
+                                 andCount:(NSInteger)homeCount
+                                  andPage:(NSInteger)page
+                             successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock;
 @end

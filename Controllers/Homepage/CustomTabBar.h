@@ -30,12 +30,6 @@ static int lastSelectINdex;
     UIImageView * img4;
     UIImageView * img5;
     
-    UIImageView * imgbg1;
-    UIImageView * imgbg2;
-    UIImageView * imgbg3;
-    UIImageView * imgbg4;
-    UIImageView * imgbg5;
-    
     UILabel *lab1;
     UILabel *lab2;
     UILabel *lab3;

@@ -29,7 +29,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.navigationBarHidden = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginout) name:@"_LoginOut" object:nil];
 }
 
@@ -48,6 +47,7 @@
     }
     else{
         LoginWithOAuthVC *login = [[LoginWithOAuthVC alloc]init];
+        login.delegate = self;
         GetAppDelegate;
         [appDelegate.navController pushViewController:login animated:YES];
     }

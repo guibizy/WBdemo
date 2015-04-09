@@ -21,13 +21,19 @@
 #define GET_get_token_info [NSString stringWithFormat:@"%@/oauth2/get_token_info", HTTP_URL]
 
 //获取当前登录用户及其所关注用户的最新微博
-#define GET_statuses_home_timeline [NSString stringWithFormat:@"%@/2/statuses/home_timeline.json", HTTP_URL]
+#define GET_statuses_home_timeline [NSString stringWithFormat:@"%@/2/statuses/friends_timeline.json", HTTP_URL]
 
 //通过id获取用户信息
 #define GET_USERS_INFO_UID [NSString stringWithFormat:@"%@/2/users/show.json", HTTP_URL]
 
 //获取当前登录用户及其所关注用户的最新微博的ID
 #define GET_FRIENDS_TIMELINE [NSString stringWithFormat:@"%@/2/statuses/friends_timeline/ids.json", HTTP_URL]
+//根据微博ID返回某条微博的评论列表
+/*
+ 只返回授权用户的评论，非授权用户的评论将不返回；
+ 使用官方移动SDK调用，可多返回30%的非授权用户的评论；
+ */
+#define GET_COMMENTS_SHOW [NSString stringWithFormat:@"%@/2/comments/show.json", HTTP_URL]
 
 
 #endif

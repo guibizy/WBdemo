@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class AccountModel;
+
 @interface WBoneInfoVC : UIViewController
+
+@property(strong, nonatomic) AccountModel *oneAccountModel;
 
 @end

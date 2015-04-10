@@ -19,6 +19,7 @@
 #import "AccountModel.h"
 #import "MBProgressHUDTool.h"
 #import "MJRefresh.h"
+#import "WBoneInfoVC.h"
 
 @interface HomepageVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -118,6 +119,13 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.accountUserArray.count;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    WBoneInfoVC *onewbinfo = [[WBoneInfoVC alloc]init];
+    AccountModel *model = [self.accountUserArray objectAtIndex:indexPath.row];
+    onewbinfo.oneAccountModel = model;
+    GetAppDelegate;
+    [appDelegate.navController pushViewController:onewbinfo animated:YES];
 }
 #pragma mark callback-selector
 -(void)repostsCallBackSelectetor{

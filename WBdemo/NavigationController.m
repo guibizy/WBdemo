@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginout) name:@"_LoginOut" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginLat) name:@"_LoginIn" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +39,7 @@
 }
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"_LoginOut" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"_LoginIn" object:nil];
 }
 -(void)loginI:(BOOL)status{
     if (status) {

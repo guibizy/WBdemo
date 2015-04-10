@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51055F151AD7A87C009C3DDF /* WBoneinfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51055F131AD7A87C009C3DDF /* WBoneinfoCell.m */; };
+		51055F161AD7A87C009C3DDF /* WBoneinfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51055F141AD7A87C009C3DDF /* WBoneinfoCell.xib */; };
 		5112BFE61ACE2A90002D05C7 /* Homepage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5112BFE51ACE2A90002D05C7 /* Homepage.xcassets */; };
 		5112BFE91ACE3445002D05C7 /* CustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BFE81ACE3445002D05C7 /* CustomTabBar.m */; };
 		5112BFF01ACE390A002D05C7 /* HomeUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BFEE1ACE390A002D05C7 /* HomeUserInfoVC.m */; };
@@ -128,6 +130,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51055F121AD7A87C009C3DDF /* WBoneinfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBoneinfoCell.h; sourceTree = "<group>"; };
+		51055F131AD7A87C009C3DDF /* WBoneinfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBoneinfoCell.m; sourceTree = "<group>"; };
+		51055F141AD7A87C009C3DDF /* WBoneinfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBoneinfoCell.xib; sourceTree = "<group>"; };
 		5112BFE51ACE2A90002D05C7 /* Homepage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Homepage.xcassets; sourceTree = "<group>"; };
 		5112BFE71ACE3445002D05C7 /* CustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBar.h; sourceTree = "<group>"; };
 		5112BFE81ACE3445002D05C7 /* CustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBar.m; sourceTree = "<group>"; };
@@ -420,6 +425,9 @@
 				5112BFFC1ACE631F002D05C7 /* MessageCellFirst.h */,
 				5112BFFD1ACE631F002D05C7 /* MessageCellFirst.m */,
 				5112BFFE1ACE631F002D05C7 /* MessageCellFirst.xib */,
+				51055F121AD7A87C009C3DDF /* WBoneinfoCell.h */,
+				51055F131AD7A87C009C3DDF /* WBoneinfoCell.m */,
+				51055F141AD7A87C009C3DDF /* WBoneinfoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -912,6 +920,7 @@
 				51FF9ADA1ACBC1D900076C5E /* MBProgressHUD_error@2x.png in Resources */,
 				51FF9AE01ACBC1D900076C5E /* MBProgressHUD_Icon@2x.png in Resources */,
 				51F3A60E1ACAAFA5006EE56F /* Images.xcassets in Resources */,
+				51055F161AD7A87C009C3DDF /* WBoneinfoCell.xib in Resources */,
 				5112BFFB1ACE6297002D05C7 /* MessageVC.xib in Resources */,
 				51FF9ADD1ACBC1D900076C5E /* MBProgressHUD_Icon-Small.png in Resources */,
 				51FF9AD71ACBC1D900076C5E /* MBProgressHUD_37x-Checkmark.png in Resources */,
@@ -1002,6 +1011,7 @@
 				51EB7F161AD4ED9400B9722D /* UIViewAdditions.m in Sources */,
 				51EB7F451AD5115F00B9722D /* UIImage+GIF.m in Sources */,
 				51EB7EF01AD4DD1000B9722D /* MJRefreshConst.m in Sources */,
+				51055F151AD7A87C009C3DDF /* WBoneinfoCell.m in Sources */,
 				51EB7F141AD4ED9400B9722D /* NSDate+Convenience.m in Sources */,
 				51FF9AD51ACBC1D900076C5E /* AFURLSessionManager.m in Sources */,
 				51FF9B5B1ACBF1DD00076C5E /* HomepageVC.m in Sources */,

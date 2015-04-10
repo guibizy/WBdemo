@@ -59,7 +59,7 @@
         [SettingTool setAccessToken:resultDic[@"access_token"]];
         [[AccountOAuthModel sharedInstance] setDic:resultDic];
         [MBProgressHUDTool dismiss];
-        [self.delegate loginLat];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"_LoginIn" object:nil];
     } error:^(NSError *error) {
         [MBProgressHUDTool showErrorWithStatus:[NSString stringWithFormat:@"%@",error]];
     }];

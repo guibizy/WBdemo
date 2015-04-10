@@ -150,10 +150,10 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rIa-bD-u7G">
-                                                <rect key="frame" x="33" y="7" width="20" height="20"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinglun" translatesAutoresizingMaskIntoConstraints="NO" id="rIa-bD-u7G">
+                                                <rect key="frame" x="33" y="8" width="20" height="18"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="DzA-dq-cuM"/>
+                                                    <constraint firstAttribute="height" constant="18" id="DzA-dq-cuM"/>
                                                     <constraint firstAttribute="width" constant="20" id="jzP-nX-Uk9"/>
                                                 </constraints>
                                             </imageView>
@@ -194,11 +194,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pq-9I-GEz">
                                         <rect key="frame" x="105" y="1" width="106" height="33"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i2F-vw-Z8W">
-                                                <rect key="frame" x="33" y="7" width="20" height="20"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pingl" translatesAutoresizingMaskIntoConstraints="NO" id="i2F-vw-Z8W">
+                                                <rect key="frame" x="33" y="8" width="20" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="GWO-y3-GOM"/>
-                                                    <constraint firstAttribute="height" constant="20" id="odo-hq-NcT"/>
+                                                    <constraint firstAttribute="height" constant="18" id="odo-hq-NcT"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMW-vR-oqc">
@@ -245,10 +245,10 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8D1-ZB-vC5">
-                                                <rect key="frame" x="33" y="6" width="20" height="20"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dianz" translatesAutoresizingMaskIntoConstraints="NO" id="8D1-ZB-vC5">
+                                                <rect key="frame" x="33" y="7" width="20" height="18"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="nXi-jf-m3T"/>
+                                                    <constraint firstAttribute="height" constant="18" id="nXi-jf-m3T"/>
                                                     <constraint firstAttribute="width" constant="20" id="yKB-zb-xAU"/>
                                                 </constraints>
                                             </imageView>
@@ -376,4 +376,9 @@
             <point key="canvasLocation" x="264.5" y="261.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="dianz" width="35" height="31"/>
+        <image name="pingl" width="30" height="27"/>
+        <image name="pinglun" width="320" height="345"/>
+    </resources>
 </document>

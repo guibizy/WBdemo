@@ -254,7 +254,7 @@
 }
 //获取网络数据
 -(void)getNetworkData:(BOOL)staus{
-    int page = self.pinglunArray.count / PAGE_NUM + 1;
+    NSInteger page = self.pinglunArray.count / PAGE_NUM + 1;
     if (staus) {
         if (self.pinglunArray.count > 0) {
             [self.pinglunArray removeAllObjects];

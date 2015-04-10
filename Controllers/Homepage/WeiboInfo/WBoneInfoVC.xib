@@ -266,12 +266,9 @@
                                                     <constraint firstAttribute="height" constant="18" id="nTK-sb-0lw"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVZ-aK-XId">
-                                                <rect key="frame" x="0.0" y="29" width="320" height="1"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVZ-aK-XId">
+                                                <rect key="frame" x="0.0" y="30" width="320" height="1"/>
                                                 <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="P7V-Pb-GnJ"/>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -281,11 +278,9 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="PJ3-Uu-396" secondAttribute="trailing" constant="8" id="02W-QF-jSl"/>
                                             <constraint firstItem="PJ3-Uu-396" firstAttribute="leading" secondItem="KOz-aU-kXC" secondAttribute="trailing" constant="4" id="0pQ-G3-0cp"/>
-                                            <constraint firstAttribute="bottom" secondItem="fVZ-aK-XId" secondAttribute="bottom" id="141-iY-bFF"/>
                                             <constraint firstItem="6xt-rb-51J" firstAttribute="leading" secondItem="C6q-az-rBE" secondAttribute="trailing" constant="4" id="1hw-ds-FAs"/>
                                             <constraint firstAttribute="centerY" secondItem="6xt-rb-51J" secondAttribute="centerY" id="6aF-WK-m4A"/>
                                             <constraint firstAttribute="height" constant="30" id="9dr-qa-cs4"/>
-                                            <constraint firstItem="fVZ-aK-XId" firstAttribute="leading" secondItem="XIw-b2-lx9" secondAttribute="leading" id="IEX-wJ-YzZ"/>
                                             <constraint firstAttribute="centerY" secondItem="0gW-V0-iE3" secondAttribute="centerY" id="LtP-70-ezw"/>
                                             <constraint firstAttribute="centerY" secondItem="KOz-aU-kXC" secondAttribute="centerY" id="Qpc-j2-20Q"/>
                                             <constraint firstItem="0gW-V0-iE3" firstAttribute="leading" secondItem="6xt-rb-51J" secondAttribute="trailing" constant="16" id="R1Y-Ae-BYz"/>
@@ -294,7 +289,6 @@
                                             <constraint firstItem="KOz-aU-kXC" firstAttribute="leading" secondItem="Iuv-Lr-KKh" secondAttribute="trailing" constant="16" id="mbt-cq-KA1"/>
                                             <constraint firstAttribute="centerY" secondItem="Iuv-Lr-KKh" secondAttribute="centerY" id="nei-tD-k6r"/>
                                             <constraint firstAttribute="centerY" secondItem="PJ3-Uu-396" secondAttribute="centerY" id="ppd-IQ-rFP"/>
-                                            <constraint firstAttribute="trailing" secondItem="fVZ-aK-XId" secondAttribute="trailing" id="zSY-Di-EUW"/>
                                         </constraints>
                                     </view>
                                 </subviews>

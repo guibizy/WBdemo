@@ -21,6 +21,10 @@
 		5112C0001ACE631F002D05C7 /* MessageCellFirst.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5112BFFE1ACE631F002D05C7 /* MessageCellFirst.xib */; };
 		5112C0091ACE695C002D05C7 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112C0071ACE695C002D05C7 /* SearchVC.m */; };
 		5112C00A1ACE695C002D05C7 /* SearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5112C0081ACE695C002D05C7 /* SearchVC.xib */; };
+		5116DBF61ADE387F000C7563 /* PublishWB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5116DBF41ADE387F000C7563 /* PublishWB.m */; };
+		5116DBF71ADE387F000C7563 /* PublishWB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5116DBF51ADE387F000C7563 /* PublishWB.xib */; };
+		5116DBFC1ADE3DBB000C7563 /* LocalStorage+Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 5116DBF91ADE3DBB000C7563 /* LocalStorage+Document.m */; };
+		5116DBFD1ADE3DBB000C7563 /* LocalStorage+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 5116DBFB1ADE3DBB000C7563 /* LocalStorage+Download.m */; };
 		511BB3561ACCC620008C8245 /* SettingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB3551ACCC620008C8245 /* SettingTool.m */; };
 		511BB3591ACCCBE3008C8245 /* AccountOAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB3581ACCCBE3008C8245 /* AccountOAuthModel.m */; };
 		511BB35D1ACCEE27008C8245 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 511BB35B1ACCEE27008C8245 /* NavigationController.m */; };
@@ -151,6 +155,13 @@
 		5112C0061ACE695C002D05C7 /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
 		5112C0071ACE695C002D05C7 /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
 		5112C0081ACE695C002D05C7 /* SearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchVC.xib; sourceTree = "<group>"; };
+		5116DBF31ADE387F000C7563 /* PublishWB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishWB.h; sourceTree = "<group>"; };
+		5116DBF41ADE387F000C7563 /* PublishWB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishWB.m; sourceTree = "<group>"; };
+		5116DBF51ADE387F000C7563 /* PublishWB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublishWB.xib; sourceTree = "<group>"; };
+		5116DBF81ADE3DBB000C7563 /* LocalStorage+Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LocalStorage+Document.h"; sourceTree = "<group>"; };
+		5116DBF91ADE3DBB000C7563 /* LocalStorage+Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LocalStorage+Document.m"; sourceTree = "<group>"; };
+		5116DBFA1ADE3DBB000C7563 /* LocalStorage+Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LocalStorage+Download.h"; sourceTree = "<group>"; };
+		5116DBFB1ADE3DBB000C7563 /* LocalStorage+Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LocalStorage+Download.m"; sourceTree = "<group>"; };
 		511BB3541ACCC620008C8245 /* SettingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTool.h; sourceTree = "<group>"; };
 		511BB3551ACCC620008C8245 /* SettingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTool.m; sourceTree = "<group>"; };
 		511BB3571ACCCBE3008C8245 /* AccountOAuthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountOAuthModel.h; sourceTree = "<group>"; };
@@ -392,6 +403,16 @@
 				5112BFEF1ACE390A002D05C7 /* HomeUserInfoVC.xib */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		5116DBF21ADE3863000C7563 /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				5116DBF31ADE387F000C7563 /* PublishWB.h */,
+				5116DBF41ADE387F000C7563 /* PublishWB.m */,
+				5116DBF51ADE387F000C7563 /* PublishWB.xib */,
+			);
+			name = Publish;
 			sourceTree = "<group>";
 		};
 		511BB35F1ACD1476008C8245 /* IMG */ = {
@@ -751,6 +772,10 @@
 		51FF9B2A1ACBDD4600076C5E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				5116DBF81ADE3DBB000C7563 /* LocalStorage+Document.h */,
+				5116DBF91ADE3DBB000C7563 /* LocalStorage+Document.m */,
+				5116DBFA1ADE3DBB000C7563 /* LocalStorage+Download.h */,
+				5116DBFB1ADE3DBB000C7563 /* LocalStorage+Download.m */,
 				51EB7F071AD4ED9400B9722D /* NSDate+Convenience.h */,
 				51EB7F081AD4ED9400B9722D /* NSDate+Convenience.m */,
 				511BB3541ACCC620008C8245 /* SettingTool.h */,
@@ -822,6 +847,7 @@
 		51FF9B571ACBF1A100076C5E /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				5116DBF21ADE3863000C7563 /* Publish */,
 				51B69E751AD62A4D00F339C8 /* WeiboInfo */,
 				5112BFE71ACE3445002D05C7 /* CustomTabBar.h */,
 				5112BFE81ACE3445002D05C7 /* CustomTabBar.m */,
@@ -918,6 +944,7 @@
 				51FF9ADF1ACBC1D900076C5E /* MBProgressHUD_Icon.png in Resources */,
 				51FF9AD91ACBC1D900076C5E /* MBProgressHUD_error.png in Resources */,
 				51FF9ADA1ACBC1D900076C5E /* MBProgressHUD_error@2x.png in Resources */,
+				5116DBF71ADE387F000C7563 /* PublishWB.xib in Resources */,
 				51FF9AE01ACBC1D900076C5E /* MBProgressHUD_Icon@2x.png in Resources */,
 				51F3A60E1ACAAFA5006EE56F /* Images.xcassets in Resources */,
 				51055F161AD7A87C009C3DDF /* WBoneinfoCell.xib in Resources */,
@@ -963,6 +990,7 @@
 				51EB7ED91AD4C37D00B9722D /* AccountModel.m in Sources */,
 				51FF9B031ACBC3C700076C5E /* MBProgressHUDTool.m in Sources */,
 				51EB7F101AD4ED9400B9722D /* KalLogic.m in Sources */,
+				5116DBFD1ADE3DBB000C7563 /* LocalStorage+Download.m in Sources */,
 				51FF9B2D1ACBDD6500076C5E /* NetworkTool.m in Sources */,
 				51EB7F3E1AD5115F00B9722D /* SDWebImageCompat.m in Sources */,
 				51EB7F3F1AD5115F00B9722D /* SDWebImageDecoder.m in Sources */,
@@ -970,6 +998,7 @@
 				51F3A6061ACAAFA5006EE56F /* WBdemo.xcdatamodeld in Sources */,
 				51EB7F461AD5115F00B9722D /* UIImage+MultiFormat.m in Sources */,
 				51FF9B391ACBDE3100076C5E /* NSString+MD5.m in Sources */,
+				5116DBF61ADE387F000C7563 /* PublishWB.m in Sources */,
 				51EB7EEF1AD4DD1000B9722D /* MJRefreshBaseView.m in Sources */,
 				51EB7F3C1AD5115F00B9722D /* NSData+ImageContentType.m in Sources */,
 				5112BFF51ACE3DDB002D05C7 /* UserInfoCell.m in Sources */,
@@ -993,6 +1022,7 @@
 				51FF9B501ACBEC1A00076C5E /* FMDatabase.m in Sources */,
 				51FF9AD31ACBC1D900076C5E /* AFURLRequestSerialization.m in Sources */,
 				51EB7F0D1AD4ED9400B9722D /* CalendarVC.m in Sources */,
+				5116DBFC1ADE3DBB000C7563 /* LocalStorage+Document.m in Sources */,
 				51EB7EF41AD4DD1000B9722D /* UIScrollView+MJRefresh.m in Sources */,
 				51FF9B531ACBEC1A00076C5E /* FMDatabaseQueue.m in Sources */,
 				51EB7F0F1AD4ED9400B9722D /* KalGridView.m in Sources */,

@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomepageVC">
             <connections>
                 <outlet property="tableView" destination="1MI-Tb-Wb9" id="QpQ-2T-nNK"/>
+                <outlet property="titleNameLab" destination="Y1s-Mj-Bb5" id="051-h2-FcK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,14 +30,37 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1s-Mj-Bb5">
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52w-xF-B5k">
+                            <rect key="frame" x="0.0" y="63" width="320" height="1"/>
+                            <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="9eH-0Q-xYq"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksU-j8-KSC">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="5q4-vh-Dnw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="52w-xF-B5k" secondAttribute="bottom" id="BoX-sE-CVf"/>
+                        <constraint firstAttribute="centerX" secondItem="ksU-j8-KSC" secondAttribute="centerX" id="FJF-Jq-vGc"/>
+                        <constraint firstItem="ksU-j8-KSC" firstAttribute="top" secondItem="S6b-Fn-bzX" secondAttribute="top" constant="20" id="Lme-ls-29H"/>
+                        <constraint firstItem="52w-xF-B5k" firstAttribute="leading" secondItem="S6b-Fn-bzX" secondAttribute="leading" id="Ndt-Wp-IWZ"/>
                         <constraint firstAttribute="height" constant="64" id="TAv-iP-gZa"/>
+                        <constraint firstAttribute="trailing" secondItem="52w-xF-B5k" secondAttribute="trailing" id="iZj-rQ-QGr"/>
                         <constraint firstAttribute="centerX" secondItem="Y1s-Mj-Bb5" secondAttribute="centerX" id="kt7-Wi-VRm"/>
                         <constraint firstAttribute="bottom" secondItem="Y1s-Mj-Bb5" secondAttribute="bottom" constant="14" id="sTH-K6-YLH"/>
                     </constraints>

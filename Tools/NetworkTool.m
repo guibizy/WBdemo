@@ -23,9 +23,9 @@
     [NetworkTool postWithURL:GET_revokeoauth2 parameters:dic successBlock:successBlock error:errorBlock];
 }
 
-+(void)getUsersInfoWithId:(NSString *)token andUid:(NSString *)uid successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
++(void)getUsersInfoWithId:(NSString *)token andUid:(long long)uid successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
     NSDictionary *dic = @{@"access_token":token,
-                          @"uid":uid};
+                          @"uid":@(uid)};
     [NetworkTool getWithURL:GET_USERS_INFO_UID parameters:dic successBlock:successBlock error:errorBlock];
 }
 
@@ -59,6 +59,77 @@
     [NetworkTool getWithURL:GET_COMMENTS_SHOW parameters:dic successBlock:successBlock error:errorBlock];
 }
 
+/**
+ *  评论一条微博
+ *
+ *  @return return value description
+ */
++(void)commentsCreate:(NSString *)token andID:(long long)_id andContent:(NSString *)comment successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSDictionary *dic = @{@"access_token":token,
+                          @"id":@(_id),
+                          @"comment":comment};
+    [NetworkTool postWithURL:wb_PINGLUN parameters:dic successBlock:successBlock error:errorBlock];
+}
+/**
+ *  删除一条评论
+ *
+ *  @return return value description
+ */
++(void)commentsDestroy:(NSString *)token andID:(long long)cid successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSDictionary *dic = @{@"access_token":token,
+                          @"cid":@(cid)};
+    [NetworkTool postWithURL:wb_PINGLUN_destroy parameters:dic successBlock:successBlock error:errorBlock];
+}
+
+/**
+ *  回复一条评论
+ *
+ *  @return return value description
+ */
++(void)commentsReply:(NSString *)token
+               andID:(long long)cid
+             andwbID:(long long)_id
+          andComment:(NSString *)comment
+  andwithout_mention:(NSInteger)without_mention
+      andcomment_ori:(NSInteger)comment_ori
+        successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSDictionary *dic = @{@"access_token":token,
+                          @"cid":@(cid),
+                          @"id":@(_id),
+                          @"comment":comment,
+                          @"without_mention":@(without_mention),
+                          @"comment_ori":@(comment_ori)};
+    [NetworkTool postWithURL:wb_PINGLUN_destroy parameters:dic successBlock:successBlock error:errorBlock];
+}
+
+/**
+ *  转发一条wb
+ *
+ *  @return return value description
+ */
++(void)statusesRepost:(NSString *)token
+              andwbID:(long long)_id
+            andStatus:(NSString *)status
+        andis_comment:(NSInteger)is_comment
+         successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSDictionary *dic = @{@"access_token":token,
+                          @"id":@(_id),
+                          @"status":status,
+                          @"is_comment":@(is_comment)};
+    [NetworkTool postWithURL:wb_PINGLUN_destroy parameters:dic successBlock:successBlock error:errorBlock];
+}
+/**
+ *  删除一条wb
+ *
+ *  @return return value description
+ */
++(void)statusesDestroy:(NSString *)token
+               andwbID:(long long)_id
+          successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSDictionary *dic = @{@"access_token":token,
+                          @"id":@(_id)};
+    [NetworkTool postWithURL:wb_PINGLUN_destroy parameters:dic successBlock:successBlock error:errorBlock];
+}
 #pragma mark -------
 + (void)getWithURL:(NSString *)url parameters:(NSDictionary *)par successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock {
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
@@ -101,4 +172,7 @@
         });
     }];
 }
+
 @end
+
+

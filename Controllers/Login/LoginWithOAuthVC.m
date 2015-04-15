@@ -43,7 +43,7 @@
         NSInteger loc = range.location + range.length;
         NSString *code = [urlStr substringFromIndex:loc];
         [self accessOAuthWithCode:code];
-        return YES;
+        return NO;
     }
     return YES;
 }
@@ -58,7 +58,7 @@
     [NetworkTool getAccessTokenWithURL:dic successBlock:^(NSDictionary *resultDic) {
         [SettingTool setAccessToken:resultDic[@"access_token"]];
         [[AccountOAuthModel sharedInstance] setDic:resultDic];
-        [MBProgressHUDTool dismiss];
+        [MBProgressHUDTool showSuccessWithStatus:@"登录成功"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"_LoginIn" object:nil];
     } error:^(NSError *error) {
         [MBProgressHUDTool showErrorWithStatus:[NSString stringWithFormat:@"%@",error]];

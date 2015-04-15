@@ -8,6 +8,7 @@
 
 #import "AccountOAuthModel.h"
 
+#import "AccountUserModel.h"
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(AccountOAuthModel);
 
@@ -23,6 +24,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AccountOAuthModel);
         self.expires_in = 0;
         self.access_token = @"";
         self.create_at = 0;
+        self.user = [[AccountUserModel alloc]init];
     }
     return self;
 }
@@ -36,5 +38,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AccountOAuthModel);
     SET_DIC_LONG_LONG_KEY(dic, self.expires_in, @"expires_in");
     SET_DIC_STRING_KEY(dic, self.access_token, @"access_token");
     SET_DIC_LONG_LONG_KEY(dic, self.create_at, @"create_at");
+    
+//    NSDictionary *userdic = dic;
+//    if (userdic != nil) {
+//        [self.user setDic:userdic];
+//    }
 }
 @end

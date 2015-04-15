@@ -9,7 +9,7 @@
 #define headHeight 110
 #define LineImgNum 3
 #define ImgHeight 80
-#define PAGE_NUM 1
+#define PAGE_NUM 20
 
 #import "WBoneInfoVC.h"
 
@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *createdLab;
 @property (weak, nonatomic) IBOutlet UILabel *sourceLab;
 @property (weak, nonatomic) IBOutlet UILabel *textLab;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @property (weak, nonatomic) IBOutlet UILabel *repostsCountLab;
 @property (weak, nonatomic) IBOutlet UILabel *commentsCountLab;
@@ -64,13 +65,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableview.delegate = self;
+    self.tableview.dataSource = self;
     CGFloat headheight = headHeight;
     [self setKongjianValue:self.oneAccountModel];
     CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, 0);
     headheight = [self setHeadHeight:self.oneAccountModel];
     frame.size.height = headheight;
     self.tabHeadView.frame = frame;
-    [self getNetworkData:YES];
+//    [self getNetworkData:YES];
 }
 //
 -(void)setKongjianValue:(AccountModel *)model{
@@ -284,13 +287,27 @@
         cell = [tableView dequeueReusableCellWithIdentifier:cellname];
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellname];
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 1;
+    return 60;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.pinglunArray.count;
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 30;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *sectionVie = [[UIView alloc]init]
+    ;
+    sectionVie.frame = CGRectMake(0, 0, SCREEN_WIDTH, 30);
+    sectionVie.backgroundColor = [UIColor blackColor];
+    return sectionVie;
 }
 #pragma mark -onclick
 - (IBAction)pushBackOnClick:(UIButton *)sender {

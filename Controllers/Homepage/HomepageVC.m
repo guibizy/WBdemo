@@ -20,11 +20,13 @@
 #import "MBProgressHUDTool.h"
 #import "MJRefresh.h"
 #import "WBoneInfoVC.h"
+#import "AccountUserModel.h"
 
 @interface HomepageVC ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *accountUserArray;
+@property (weak, nonatomic) IBOutlet UILabel *titleNameLab;
 
 @end
 
@@ -41,7 +43,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    self.titleNameLab.text = [AccountOAuthModel sharedInstance].user.screen_name;
     self.navigationController.navigationBarHidden = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -51,7 +54,7 @@
     [self.tableView addFooterWithCallback:^{
         [self getHomeTimeLineData:NO];
     }];
-    [self getHomeTimeLineData:YES];
+//    [self getHomeTimeLineData:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -128,12 +131,24 @@
     [appDelegate.navController pushViewController:onewbinfo animated:YES];
 }
 #pragma mark callback-selector
+/**
+ *  转发
+ */
 -(void)repostsCallBackSelectetor{
     
 }
+/**
+ *  评论
+ */
 -(void)commentsCallBackSelectetor{
     
 }
+/**
+ * 点赞
+ *
+ *  @param model
+ *  @param cell  
+ */
 -(void)attitudesCallBackSelectetor:(AccountModel *)model andCell:(UITableViewCell *)cell{
     
 }

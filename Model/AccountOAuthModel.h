@@ -10,6 +10,8 @@
 
 #import "SynthesizeSingleton.h"
 
+@class AccountUserModel;
+
 @interface AccountOAuthModel : NSObject
 
 //返回授权信息时
@@ -19,7 +21,7 @@
 
 //获取授权信息时
 @property(assign,nonatomic) long long create_at;//生命周期
-
+@property(strong,nonatomic) AccountUserModel *user;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(AccountOAuthModel);
 

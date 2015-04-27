@@ -116,7 +116,7 @@
                           @"id":@(_id),
                           @"status":status,
                           @"is_comment":@(is_comment)};
-    [NetworkTool postWithURL:wb_PINGLUN_destroy parameters:dic successBlock:successBlock error:errorBlock];
+    [NetworkTool postWithURL:wb_ZHUANFA parameters:dic successBlock:successBlock error:errorBlock];
 }
 /**
  *  删除一条wb

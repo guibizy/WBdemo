@@ -21,6 +21,7 @@
 #import "MJRefresh.h"
 #import "WBoneInfoVC.h"
 #import "AccountUserModel.h"
+#import "PublishWB.h"
 
 @interface HomepageVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -92,7 +93,8 @@
     } error:^(NSError *error) {
         [self.tableView headerEndRefreshing];
         [self.tableView footerEndRefreshing];
-        [MBProgressHUDTool showErrorWithStatus:[NSString stringWithFormat:@"%@",error]];
+        [MBProgressHUDTool showErrorWithStatus:@"网络连接错误"];
+//        [MBProgressHUDTool showErrorWithStatus:[NSString stringWithFormat:@"%@",error]];
     }];
 }
 #pragma mark tableview
@@ -105,7 +107,7 @@
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     cell.repostsCallBackBlock = ^(AccountModel *model,UITableViewCell *cell){
-        
+        [self repostsCallBackSelectetor:model];
     };
     cell.commentsCallBackBlock = ^(AccountModel *model,UITableViewCell *cell){
 
@@ -134,8 +136,11 @@
 /**
  *  转发
  */
--(void)repostsCallBackSelectetor{
-    
+-(void)repostsCallBackSelectetor:(AccountModel *)model{
+    PublishWB *reposts = [[PublishWB alloc]init];
+    reposts.oneAccountModel = model;
+    GetAppDelegate;
+    [appDelegate.navController pushViewController:reposts animated:YES];
 }
 /**
  *  评论

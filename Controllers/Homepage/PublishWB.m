@@ -13,6 +13,7 @@
 #import "SettingTool.h"
 #import "NetworkTool.h"
 #import "MBProgressHUDTool.h"
+#import "AccountModel.h"
 
 @interface PublishWB ()<UITextViewDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
@@ -74,13 +75,18 @@
  *
  */
 - (IBAction)publishOnClick:(id)sender {
-    
+    [self zhuanfaWB];
 }
 
 //1转发微博
 -(void)zhuanfaWB{
-    [NetworkTool statusesRepost:[SettingTool getAccessToken] andwbID:0 andStatus:self.textview.text andis_comment:3 successBlock:^(NSDictionary *resultDic) {
-        if ([resultDic[@"id"] longValue] > 0) {
+    if (self.oneAccountModel._id <= 0) {
+        [MBProgressHUDTool showErrorWithStatus:@"转发失败"];
+        return;
+    }
+    [NetworkTool statusesRepost:[SettingTool getAccessToken] andwbID:self.oneAccountModel._id andStatus:self.textview.text andis_comment:0 successBlock:^(NSDictionary *resultDic) {
+        NSDictionary *resultdic = resultDic[@"user"];
+        if (resultdic[@"id"] != nil) {
             [MBProgressHUDTool showSuccessWithStatus:@"转发成功"];
         }else{
             [MBProgressHUDTool showErrorWithStatus:@"转发失败"];

@@ -43,36 +43,37 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"_LoginIn" object:nil];
 }
 -(void)loginI:(BOOL)status{
-    [NetworkTool getUsersInfoWithId:[SettingTool getAccessToken] andUid:[AccountOAuthModel sharedInstance].uid successBlock:^(NSDictionary *resultDic) {
-        
-        [[AccountOAuthModel sharedInstance] setDic:resultDic];
-        
-        if (status) {
-            [self initTabBar];
-            GetAppDelegate;
-            [appDelegate.navController pushViewController:self.tabbar animated:YES];
-        }
-        else{
-            LoginWithOAuthVC *login = [[LoginWithOAuthVC alloc]init];
-            login.delegate = self;
-            GetAppDelegate;
-            [appDelegate.navController pushViewController:login animated:YES];
-        }
-    } error:^(NSError *error) {
-        [MBProgressHUDTool showErrorWithStatus:@"网络连接失败"];
-        if (status) {
-            [self initTabBar];
-            GetAppDelegate;
-            [appDelegate.navController pushViewController:self.tabbar animated:YES];
-        }
-        else{
-            LoginWithOAuthVC *login = [[LoginWithOAuthVC alloc]init];
-            login.delegate = self;
-            GetAppDelegate;
-            [appDelegate.navController pushViewController:login animated:YES];
-        }
-        
-    }];
+    if (status) {
+        [self initTabBar];
+        GetAppDelegate;
+        [appDelegate.navController pushViewController:self.tabbar animated:YES];
+    }
+    else{
+        LoginWithOAuthVC *login = [[LoginWithOAuthVC alloc]init];
+        login.delegate = self;
+        GetAppDelegate;
+        [appDelegate.navController pushViewController:login animated:YES];
+    }
+//    [NetworkTool getUsersInfoWithId:[SettingTool getAccessToken] andUid:[AccountOAuthModel sharedInstance].uid successBlock:^(NSDictionary *result∫Dic) {
+//        ß
+//        [[AccountOAuthModel sharedInstance] setDic:resultDic];
+//        
+//        
+//    } error:^(NSError *error) {
+//        [MBProgressHUDTool showErrorWithStatus:@"网络连接失败"];
+//        if (status) {
+//            [self initTabBar];
+//            GetAppDelegate;
+//            [appDelegate.navController pushViewController:self.tabbar animated:YES];
+//        }
+//        else{
+//            LoginWithOAuthVC *login = [[LoginWithOAuthVC alloc]init];
+//            login.delegate = self;
+//            GetAppDelegate;
+//            [appDelegate.navController pushViewController:login animated:YES];
+//        }
+//        
+//    }];
 }
 -(void)loginout{
     

@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class AccountModel;
+
 @interface PublishWB : UIViewController
 
 /**
  *  1.转发微博 2.评论微博 3.发布微博 4.回复评论
  */
 @property(assign,nonatomic) NSInteger WBstatus;
+@property(strong, nonatomic) AccountModel *oneAccountModel;
 
 
 @end

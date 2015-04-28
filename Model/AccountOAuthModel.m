@@ -9,6 +9,8 @@
 #import "AccountOAuthModel.h"
 
 #import "AccountUserModel.h"
+#import "NetworkTool.h"
+#import "SettingTool.h"
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_PROTOTYPE(AccountOAuthModel);
 
@@ -39,9 +41,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AccountOAuthModel);
     SET_DIC_STRING_KEY(dic, self.access_token, @"access_token");
     SET_DIC_LONG_LONG_KEY(dic, self.create_at, @"create_at");
     
-//    NSDictionary *userdic = dic;
-//    if (userdic != nil) {
-//        [self.user setDic:userdic];
-//    }
+    NSDictionary *userdic = dic;
+    if (userdic != nil) {
+        [self.user setDic:userdic];
+    }
 }
+
++(void)refreshPersonInfo{
+    [NetworkTool getUsersInfoWithId:[SettingTool getAccessToken] andUid:[[SettingTool getUuid] longLongValue] successBlock:^(NSDictionary *resultDic) {
+        [[AccountOAuthModel sharedInstance] setDic:resultDic];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"refreshMy" object:nil];
+    } error:^(NSError *error) {
+    }];
+}
+
 @end

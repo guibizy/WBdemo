@@ -27,7 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *accountUserArray;
-@property (weak, nonatomic) IBOutlet UILabel *titleNameLab;
+@property (weak, nonatomic) IBOutlet UILabel *mySelfLab;
 
 @end
 
@@ -45,7 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.titleNameLab.text = [AccountOAuthModel sharedInstance].user.screen_name;
+    self.mySelfLab.text = [AccountOAuthModel sharedInstance].user.screen_name;
     self.navigationController.navigationBarHidden = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -55,9 +55,16 @@
     [self.tableView addFooterWithCallback:^{
         [self getHomeTimeLineData:NO];
     }];
-//    [self getHomeTimeLineData:YES];
+    [self getHomeTimeLineData:YES];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(refresh) name:@"refreshMy" object:nil];
 }
-
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"refreshMY" object:nil];
+}
+-(void)refresh{
+    self.mySelfLab.text = [AccountOAuthModel sharedInstance].user.screen_name;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -110,7 +117,7 @@
         [self repostsCallBackSelectetor:model];
     };
     cell.commentsCallBackBlock = ^(AccountModel *model,UITableViewCell *cell){
-
+        [self commentsCallBackSelectetor:model];
     };
     cell.attitudesCallBackBlock = ^(AccountModel *model,UITableViewCell *cell){
         [self attitudesCallBackSelectetor:model andCell:cell];
@@ -138,6 +145,7 @@
  */
 -(void)repostsCallBackSelectetor:(AccountModel *)model{
     PublishWB *reposts = [[PublishWB alloc]init];
+    reposts.WBstatus = 1;
     reposts.oneAccountModel = model;
     GetAppDelegate;
     [appDelegate.navController pushViewController:reposts animated:YES];
@@ -145,8 +153,12 @@
 /**
  *  评论
  */
--(void)commentsCallBackSelectetor{
-    
+-(void)commentsCallBackSelectetor:(AccountModel *)model{
+    PublishWB *reposts = [[PublishWB alloc]init];
+    reposts.WBstatus = 3;
+    reposts.oneAccountModel = model;
+    GetAppDelegate;
+    [appDelegate.navController pushViewController:reposts animated:YES];
 }
 /**
  * 点赞

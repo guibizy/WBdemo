@@ -28,4 +28,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(AccountOAuthModel);
 -(void)setDic:(NSDictionary *)dic;
 +(void)initSetDic:(NSDictionary *)dic;
 
++(void)refreshPersonInfo;
+
 @end

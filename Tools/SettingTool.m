@@ -11,6 +11,7 @@
 
 //#define UNIVERSITY_ARR  @"universityAr"
 #define OAUTH_ACCESS_TOKEN @"access_token"
+#define OAUTH_UUID @"UUID"
 
 #import "SettingTool.h"
 
@@ -51,6 +52,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(SettingTool);
 +(NSString *)getAccessToken{
     @synchronized ([SettingTool sharedInstance]) {
         return [[SettingTool sharedInstance].settingDictionary objectForKey:OAUTH_ACCESS_TOKEN];
+    }
+}
++(void)setUuid:(NSString *)uuid{
+    [[SettingTool sharedInstance].settingDictionary setObject:uuid forKey:OAUTH_UUID];
+    [SettingTool writeSetting];
+}
++(NSString *)getUuid{
+    @synchronized ([SettingTool sharedInstance]) {
+        return [[SettingTool sharedInstance].settingDictionary objectForKey:OAUTH_UUID];
     }
 }
 #pragma mark -

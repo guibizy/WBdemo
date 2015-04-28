@@ -34,15 +34,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.textview.delegate = self;
     [self.textview becomeFirstResponder];
+    
     self.firstImgBtn.tag = 1000;
     self.imgCount = 1;
+    self.imgView.hidden = YES;
+    
+    [self showStyle];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)showStyle{
+    if (self.WBstatus == 1) {
+        self.textviewPlacehoder.text = @"说说分享心得...";
+    }
+    if (self.WBstatus == 2) {
+
+    }
 }
 /**
  *  textviewDelegate
@@ -75,7 +88,18 @@
  *
  */
 - (IBAction)publishOnClick:(id)sender {
-    [self zhuanfaWB];
+    if (self.WBstatus == 1) {
+        [self zhuanfaWB];
+    }
+    if (self.WBstatus == 2) {
+        [self pinglunWB];
+    }
+    if (self.WBstatus == 3) {
+        
+    }
+    if (self.WBstatus == 4) {
+        [self huifupinglunWB];
+    }
 }
 
 //1转发微博
@@ -88,16 +112,25 @@
         NSDictionary *resultdic = resultDic[@"user"];
         if (resultdic[@"id"] != nil) {
             [MBProgressHUDTool showSuccessWithStatus:@"转发成功"];
+            GetAppDelegate;
+            [appDelegate.navController popViewControllerAnimated:YES];
         }else{
             [MBProgressHUDTool showErrorWithStatus:@"转发失败"];
         }
+//        GetAppDelegate;
+//        [appDelegate.navController popViewControllerAnimated:YES];
     } error:^(NSError *error) {
         [MBProgressHUDTool showErrorWithStatus:@"网络连接错误"];
     }];
 }
 //2评论微博
 -(void)pinglunWB{
-    [NetworkTool commentsCreate:[SettingTool getAccessToken] andID:0 andContent:self.textview.text successBlock:^(NSDictionary *resultDic) {
+    
+    if (self.oneAccountModel._id <= 0) {
+        [MBProgressHUDTool showErrorWithStatus:@"评论失败"];
+        return;
+    }
+    [NetworkTool commentsCreate:[SettingTool getAccessToken] andID:self.oneAccountModel._id andContent:self.textview.text successBlock:^(NSDictionary *resultDic) {
         if ([resultDic[@"id"] longValue] > 0) {
             [MBProgressHUDTool showSuccessWithStatus:@"评论成功"];
         }else{
@@ -107,8 +140,12 @@
         [MBProgressHUDTool showErrorWithStatus:@"网络连接错误"];
     }];
 }
-//3回复评论
+//4回复评论
 -(void)huifupinglunWB{
+    if (self.oneAccountModel._id <= 0) {
+        [MBProgressHUDTool showErrorWithStatus:@"回复失败"];
+        return;
+    }
     [NetworkTool commentsReply:[SettingTool getAccessToken] andID:0 andwbID:0 andComment:self.textview.text andwithout_mention:0 andcomment_ori:0 successBlock:^(NSDictionary *resultDic) {
         if ([resultDic[@"id"] longValue] > 0) {
             [MBProgressHUDTool showSuccessWithStatus:@"回复成功"];

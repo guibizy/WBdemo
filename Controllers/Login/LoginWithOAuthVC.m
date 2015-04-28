@@ -57,7 +57,9 @@
     [MBProgressHUDTool showWithStatus:@"" needBackground:YES];
     [NetworkTool getAccessTokenWithURL:dic successBlock:^(NSDictionary *resultDic) {
         [SettingTool setAccessToken:resultDic[@"access_token"]];
-        [[AccountOAuthModel sharedInstance] setDic:resultDic];
+        [SettingTool setUuid:resultDic[@"uid"]];
+//        [[AccountOAuthModel sharedInstance] setDic:resultDic];
+        [AccountOAuthModel refreshPersonInfo];
         [MBProgressHUDTool showSuccessWithStatus:@"登录成功"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"_LoginIn" object:nil];
     } error:^(NSError *error) {

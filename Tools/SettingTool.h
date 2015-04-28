@@ -12,4 +12,8 @@
 
 +(void)setAccessToken:(NSString *)accessToken;
 +(NSString *)getAccessToken;
+
++(void)setUuid:(NSString *)uuid;
++(NSString *)getUuid;
+
 @end

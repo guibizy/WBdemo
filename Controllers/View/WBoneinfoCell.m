@@ -8,6 +8,10 @@
 
 #import "WBoneinfoCell.h"
 
+#import "AccountUserModel.h"
+#import "AccountModel.h"
+#import "UIImageView+WebCache.h"
+
 @interface WBoneinfoCell()
 
 //@property (weak, nonatomic) IBOutlet UIView *cellView;
@@ -29,10 +33,16 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
--(void)setCellValue{
+-(void)setCellValue:(AccountModel *)model{
+    [self.profileImg sd_setImageWithURL: [NSURL URLWithString:model.user.profile_image_url ] placeholderImage:[UIImage imageNamed:@""] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        
+    }];
     
+    self.screenNameLab.text = model.user.screen_name;
+    self.createdLab.text = model.created_at;
+    self.textLab.text = model.text;
 }
-+(float)getCellHeight{
++(float)getCellHeight:(AccountModel *)model{
     return 1;
 }
 @end

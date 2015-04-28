@@ -23,4 +23,6 @@
 
 @property(strong,nonatomic)AccountModel *user;
 
+
+-(void)setDic:(NSDictionary *)dic;
 @end

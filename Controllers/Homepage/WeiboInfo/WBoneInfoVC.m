@@ -21,6 +21,7 @@
 #import "NetworkTool.h"
 #import "SettingTool.h"
 #import "MBProgressHUDTool.h"
+#import "CommentsShowModel.h"
 
 @interface WBoneInfoVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -73,7 +74,7 @@
     headheight = [self setHeadHeight:self.oneAccountModel];
     frame.size.height = headheight;
     self.tabHeadView.frame = frame;
-//    [self getNetworkData:YES];
+    [self getNetworkData:YES];
 }
 //
 -(void)setKongjianValue:(AccountModel *)model{
@@ -269,8 +270,14 @@
                                             andCount:PAGE_NUM
                                              andPage:page
                                         successBlock:^(NSDictionary *resultDic) {
-        if (resultDic != nil && (NSNull *)resultDic != [NSNull null]) {
-            
+        NSArray *comments = resultDic[@"comments"];
+        if (comments != nil && (NSNull *)resultDic != [NSNull null]&&comments.count > 0) {
+            for (NSDictionary *dic in comments) {
+                CommentsShowModel *comment = [[CommentsShowModel alloc]init];
+                [comment setDic:dic];
+                [self.pinglunArray addObject:comments];
+            }
+            [self.tableview reloadData];
         }else{
             [MBProgressHUDTool showErrorWithStatus:@"网络连接错误"];
         }
@@ -287,7 +294,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:cellname];
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellname];
+    [cell setCellValue:self.pinglunArray[indexPath.row]];
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

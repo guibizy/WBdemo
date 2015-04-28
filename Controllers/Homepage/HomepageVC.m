@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 74td. All rights reserved.
 //
 
-#define PAGE_NUM 10
+#define PAGE_NUM 20
 
 #import "HomepageVC.h"
 
@@ -82,7 +82,7 @@
     }else{
         page = self.accountUserArray.count/PAGE_NUM + 1;
     }
-    [NetworkTool getUserHomeTimelineWhthAccessToken:[SettingTool getAccessToken] andCount:2 andPage:page successBlock:^(NSDictionary *resultDic) {
+    [NetworkTool getUserHomeTimelineWhthAccessToken:[SettingTool getAccessToken] andCount:PAGE_NUM andPage:page successBlock:^(NSDictionary *resultDic) {
         [self.tableView headerEndRefreshing];
         [self.tableView footerEndRefreshing];
         if (resultDic[@"statuses"] != nil && resultDic[@"statuses"] != [NSNull null]) {
@@ -155,7 +155,7 @@
  */
 -(void)commentsCallBackSelectetor:(AccountModel *)model{
     PublishWB *reposts = [[PublishWB alloc]init];
-    reposts.WBstatus = 3;
+    reposts.WBstatus = 2;
     reposts.oneAccountModel = model;
     GetAppDelegate;
     [appDelegate.navController pushViewController:reposts animated:YES];

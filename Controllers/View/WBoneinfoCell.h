@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class AccountModel;
+@class CommentsShowModel;
 
 @interface WBoneinfoCell : UITableViewCell
 
--(void)setCellValue:(AccountModel *)model;
-+(float)getCellHeight:(AccountModel *)model;
+-(void)setCellValue:(CommentsShowModel *)model;
++(float)getCellHeight:(CommentsShowModel *)model;
 
 @end

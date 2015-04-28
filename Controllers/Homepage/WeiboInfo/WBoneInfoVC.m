@@ -271,16 +271,17 @@
                                              andPage:page
                                         successBlock:^(NSDictionary *resultDic) {
         NSArray *comments = resultDic[@"comments"];
-        if (comments != nil && (NSNull *)resultDic != [NSNull null]&&comments.count > 0) {
+        if (comments != nil && comments.count > 0) {
+            NSMutableArray *ary = [NSMutableArray array];
             for (NSDictionary *dic in comments) {
                 CommentsShowModel *comment = [[CommentsShowModel alloc]init];
                 [comment setDic:dic];
-                [self.pinglunArray addObject:comments];
+                [ary addObject:comment];
             }
-            [self.tableview reloadData];
-        }else{
-            [MBProgressHUDTool showErrorWithStatus:@"网络连接错误"];
+            [self.pinglunArray addObjectsFromArray:ary];
+            
         }
+        [self.tableview reloadData];
     } error:^(NSError *error) {
         [MBProgressHUDTool showErrorWithStatus:[NSString stringWithFormat:@"%@",error]];
     }];
@@ -289,16 +290,16 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellname = @"wbpinglunCell";
     WBoneinfoCell *cell = [tableView dequeueReusableCellWithIdentifier:cellname];
-    if (cell) {
+    if (cell == nil) {
         [tableView registerNib:[UINib nibWithNibName:@"WBoneinfoCell" bundle:nil] forCellReuseIdentifier:cellname];
         cell = [tableView dequeueReusableCellWithIdentifier:cellname];
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    [cell setCellValue:self.pinglunArray[indexPath.row]];
+    [cell setCellValue:[self.pinglunArray objectAtIndex:indexPath.row]];
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return [WBoneinfoCell getCellHeight:self.pinglunArray[indexPath.row]];
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.pinglunArray.count;

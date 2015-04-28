@@ -25,7 +25,7 @@
         self.idstr = @"";
         self.text = @"";
         self.source = @"";
-        self.user = [[AccountModel alloc]init];
+        self.user = [[AccountUserModel alloc]init];
     }
     return self;
 }
@@ -38,8 +38,8 @@
     SET_DIC_STRING_KEY(dic, self.text, @"text");
     SET_DIC_STRING_KEY(dic, self.source, @"source");
     
-    NSDictionary *serdic = nil;
-    if (dic[@"user"] != nil) {
+    NSDictionary *serdic = dic[@"user"];
+    if (serdic != nil) {
         [self.user setDic:serdic];
     }
 }

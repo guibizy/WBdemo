@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class AccountModel;
+@class AccountUserModel;
 
 @interface CommentsShowModel : NSObject
 
@@ -21,7 +21,7 @@
 @property(copy,nonatomic) NSString *text;
 @property(copy,nonatomic) NSString *source;
 
-@property(strong,nonatomic)AccountModel *user;
+@property(strong,nonatomic)AccountUserModel *user;
 
 
 -(void)setDic:(NSDictionary *)dic;

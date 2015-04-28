@@ -5,12 +5,14 @@
 //  Created by Nick on 15-4-10.
 //  Copyright (c) 2015年 74td. All rights reserved.
 //
+#define cell_HEIGHT 52
 
 #import "WBoneinfoCell.h"
 
 #import "AccountUserModel.h"
 #import "AccountModel.h"
 #import "UIImageView+WebCache.h"
+#import "CommentsShowModel.h"
 
 @interface WBoneinfoCell()
 
@@ -33,8 +35,8 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
--(void)setCellValue:(AccountModel *)model{
-    [self.profileImg sd_setImageWithURL: [NSURL URLWithString:model.user.profile_image_url ] placeholderImage:[UIImage imageNamed:@""] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+-(void)setCellValue:(CommentsShowModel *)model{
+    [self.profileImg sd_setImageWithURL: [NSURL URLWithString:model.user.profile_image_url ] placeholderImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",model.user.profile_image_url]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
     }];
     
@@ -42,7 +44,8 @@
     self.createdLab.text = model.created_at;
     self.textLab.text = model.text;
 }
-+(float)getCellHeight:(AccountModel *)model{
-    return 1;
++(float)getCellHeight:(CommentsShowModel *)model{
+    CGFloat labHeight = [Define getTextViewHeightWithMessage:model.text width:SCREEN_WIDTH-64 font:[UIFont fontWithName:@"STHeitiTC-Light" size:17] mixHight:17];
+    return labHeight+cell_HEIGHT;
 }
 @end

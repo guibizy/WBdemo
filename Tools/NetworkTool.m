@@ -100,7 +100,7 @@
                           @"comment":comment,
                           @"without_mention":@(without_mention),
                           @"comment_ori":@(comment_ori)};
-    [NetworkTool postWithURL:wb_PINGLUN_destroy parameters:dic successBlock:successBlock error:errorBlock];
+    [NetworkTool postWithURL:wb_PINGLUN_reply parameters:dic successBlock:successBlock error:errorBlock];
 }
 
 /**

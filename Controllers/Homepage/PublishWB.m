@@ -16,6 +16,7 @@
 #import "AccountModel.h"
 #import "AccountOAuthModel.h"
 #import "AccountUserModel.h"
+#import "CommentsShowModel.h"
 
 @interface PublishWB ()<UITextViewDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
@@ -223,14 +224,17 @@
         [MBProgressHUDTool showErrorWithStatus:@"回复失败"];
         return;
     }
-    [NetworkTool commentsReply:[SettingTool getAccessToken] andID:0 andwbID:0 andComment:self.textview.text andwithout_mention:0 andcomment_ori:0 successBlock:^(NSDictionary *resultDic) {
+    [NetworkTool commentsReply:[SettingTool getAccessToken] andID:self.oneCommentModel._id andwbID:self.oneAccountModel._id andComment:self.textview.text andwithout_mention:0 andcomment_ori:0 successBlock:^(NSDictionary *resultDic) {
         if ([resultDic[@"id"] longValue] > 0) {
             [MBProgressHUDTool showSuccessWithStatus:@"回复成功"];
+            self.callbackblock();
+            GetAppDelegate;
+            [appDelegate.navController popViewControllerAnimated:YES];
         }else{
             [MBProgressHUDTool showErrorWithStatus:@"回复失败"];
         }
     } error:^(NSError *error) {
-        [MBProgressHUDTool showErrorWithStatus:@"网络连接错误"];
+        [MBProgressHUDTool showErrorWithStatus:@"回复失败"];
     }];
 }
 

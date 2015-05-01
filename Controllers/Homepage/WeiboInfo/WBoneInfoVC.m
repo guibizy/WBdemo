@@ -22,6 +22,7 @@
 #import "SettingTool.h"
 #import "MBProgressHUDTool.h"
 #import "CommentsShowModel.h"
+#import "PublishWB.h"
 
 @interface WBoneInfoVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -35,9 +36,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *textLab;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
-@property (weak, nonatomic) IBOutlet UILabel *repostsCountLab;
-@property (weak, nonatomic) IBOutlet UILabel *commentsCountLab;
-@property (weak, nonatomic) IBOutlet UILabel *attitudesCountLab;
+//@property (weak, nonatomic) IBOutlet UILabel *repostsCountLab;
+//@property (weak, nonatomic) IBOutlet UILabel *commentsCountLab;
+//@property (weak, nonatomic) IBOutlet UILabel *attitudesCountLab;
+@property (weak, nonatomic) IBOutlet UILabel *dianzanLab;
 
 @property (weak, nonatomic) IBOutlet UIView *statusView;
 @property (weak, nonatomic) IBOutlet UIView *remindStatusView;
@@ -52,8 +54,12 @@
 
 
 @property (strong, nonatomic) IBOutlet UIView *secionView;
+//弹窗view
+@property (strong, nonatomic) IBOutlet UIView *alertView;
+@property (weak, nonatomic) IBOutlet UIButton *alertBen;
 
 @property (strong, nonatomic) NSMutableArray *pinglunArray;
+@property (strong, nonatomic) CommentsShowModel *oneCommentModel;
 
 @end
 
@@ -64,6 +70,7 @@
     self = [super init];
     if (self) {
         self.pinglunArray = [NSMutableArray array];
+        self.oneCommentModel = [[CommentsShowModel alloc]init];
     }
     return self;
 }
@@ -120,15 +127,15 @@
         self.sourceLab.text = [NSString stringWithFormat:@"来自 %@",model.source];
     }
     self.textLab.text = model.text;
-    if (model.reposts_count > 0) {
-        self.repostsCountLab.text = [NSString stringWithFormat:@"%d",model.reposts_count];
-    }
+//    if (model.reposts_count > 0) {
+//        self.repostsCountLab.text = [NSString stringWithFormat:@"%d",model.reposts_count];
+//    }
     if (model.comments_count > 0) {
-        self.commentsCountLab.text = [NSString stringWithFormat:@"%d",model.comments_count];
+        self.pinglunNumLab.text = [NSString stringWithFormat:@"%d",model.comments_count];
     }
-    if (model.attitudes_count > 0) {
-        self.attitudesCountLab.text = [NSString stringWithFormat:@"%d",model.attitudes_count];
-    }
+//    if (model.attitudes_count > 0) {
+//        self.dianzanLab.text = [NSString stringWithFormat:@"%d",model.attitudes_count];
+//    }
     //头像
     [self.profileImg sd_setImageWithURL:[NSURL URLWithString:model.user.profile_image_url] placeholderImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",model.user.profile_image_url]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
@@ -283,7 +290,7 @@
                 [ary addObject:comment];
             }
             [self.pinglunArray addObjectsFromArray:ary];
-            self.pinglunNumLab.text = [NSString stringWithFormat:@"%d",self.pinglunArray.count];
+            self.dianzanLab.text = [NSString stringWithFormat:@"%d",self.pinglunArray.count];
         }
         [self.tableview reloadData];
     } error:^(NSError *error) {
@@ -318,6 +325,45 @@
     self.secionView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 40);
     return self.secionView;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.oneCommentModel = [self.pinglunArray objectAtIndex:indexPath.row];
+    [self alertViewOpen];
+}
+#pragma alertview
+-(void)alertViewOpen{
+    self.alertView.frame = WINDOW.bounds;
+    [WINDOW addSubview:self.alertView];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.alertBen.alpha = 0.5;
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+-(void)closeAlertView{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.alertBen.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self.alertView removeFromSuperview];
+    }];
+}
+- (IBAction)closeOnClick:(id)sender {
+    [self closeAlertView];
+}
+#pragma mark 弹窗各个方法
+//回复方法
+- (IBAction)huifuOnClick:(id)sender {
+    PublishWB *add = [[PublishWB alloc]init];
+    add.oneAccountModel = self.oneAccountModel;
+    add.oneCommentModel = self.oneCommentModel;
+    add.callbackblock = ^(){
+        [self getNetworkData:YES];
+    };
+    add.WBstatus = 5;
+    [self closeAlertView];
+    GetAppDelegate;
+    [appDelegate.navController pushViewController:add animated:YES];
+}
+
 #pragma mark -onclick
 - (IBAction)pushBackOnClick:(UIButton *)sender {
     GetAppDelegate;

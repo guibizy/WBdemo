@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @class AccountModel;
+@class CommentsShowModel;
+
+typedef void(^callbackBlock)();
 
 @interface PublishWB : UIViewController
 
@@ -17,6 +20,8 @@
  */
 @property(assign,nonatomic) NSInteger WBstatus;
 @property(strong, nonatomic) AccountModel *oneAccountModel;
+@property(strong, nonatomic) CommentsShowModel *oneCommentModel;
+@property(copy, nonatomic) callbackBlock callbackblock;
 
 
 @end

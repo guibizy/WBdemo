@@ -49,6 +49,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvZ-PZ-NXi">
+                                <rect key="frame" x="0.0" y="81" width="320" height="1"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="89o-oi-pgn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -58,8 +68,11 @@
                             <constraint firstItem="vUa-ac-et3" firstAttribute="leading" secondItem="AaD-JV-v4D" secondAttribute="leading" constant="8" id="HBL-7J-dex"/>
                             <constraint firstItem="CNg-on-wKs" firstAttribute="leading" secondItem="HaU-em-0m2" secondAttribute="leading" id="V4K-Kh-HdY"/>
                             <constraint firstItem="CNg-on-wKs" firstAttribute="leading" secondItem="vUa-ac-et3" secondAttribute="trailing" constant="8" id="W1Z-tj-Kd7"/>
+                            <constraint firstAttribute="trailing" secondItem="FvZ-PZ-NXi" secondAttribute="trailing" id="Z5l-tS-QAl"/>
                             <constraint firstItem="zYV-Ku-yTU" firstAttribute="leading" secondItem="vUa-ac-et3" secondAttribute="trailing" constant="8" id="bwX-Ru-Xpx"/>
+                            <constraint firstAttribute="bottom" secondItem="FvZ-PZ-NXi" secondAttribute="bottom" id="cv7-4S-Rzd"/>
                             <constraint firstItem="HaU-em-0m2" firstAttribute="top" secondItem="zYV-Ku-yTU" secondAttribute="bottom" constant="4" id="hSv-Tl-D3k"/>
+                            <constraint firstItem="FvZ-PZ-NXi" firstAttribute="leading" secondItem="AaD-JV-v4D" secondAttribute="leading" id="oRJ-Za-XPz"/>
                             <constraint firstItem="zYV-Ku-yTU" firstAttribute="top" secondItem="CNg-on-wKs" secondAttribute="bottom" id="xo5-Xb-uMc"/>
                         </constraints>
                     </view>
@@ -77,7 +90,7 @@
                 <outlet property="screenNameLab" destination="CNg-on-wKs" id="2ao-48-Axd"/>
                 <outlet property="textLab" destination="HaU-em-0m2" id="Yl8-hN-wDK"/>
             </connections>
-            <point key="canvasLocation" x="270" y="231.5"/>
+            <point key="canvasLocation" x="270" y="229.5"/>
         </tableViewCell>
     </objects>
 </document>

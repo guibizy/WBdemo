@@ -14,6 +14,8 @@
 #import "NetworkTool.h"
 #import "MBProgressHUDTool.h"
 #import "AccountModel.h"
+#import "AccountOAuthModel.h"
+#import "AccountUserModel.h"
 
 @interface PublishWB ()<UITextViewDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
@@ -28,9 +30,21 @@
 @property (assign, nonatomic) NSInteger btnBag;
 @property (assign, nonatomic) NSInteger imgCount;
 
+@property(strong, nonatomic) NSMutableArray *photoArray;
+
 @end
 
 @implementation PublishWB
+
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.photoArray = [NSMutableArray array];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,6 +55,7 @@
     self.firstImgBtn.tag = 1000;
     self.imgCount = 1;
     self.imgView.hidden = YES;
+    self.nameLab.text = [AccountOAuthModel sharedInstance].user.screen_name;
     
     [self showStyle];
 }
@@ -55,6 +70,15 @@
     }
     if (self.WBstatus == 2) {
 
+    }
+    if (self.WBstatus == 3) {
+        self.titleLab.text = @"发微博";
+        self.textviewPlacehoder.text = @"说点什么吧...";
+    }
+    if (self.WBstatus == 4) {
+        self.titleLab.text = @"发微博";
+        self.textviewPlacehoder.text = @"说点什么吧...";
+        self.imgView.hidden = NO;
     }
 }
 /**
@@ -95,10 +119,10 @@
         [self pinglunWB];
     }
     if (self.WBstatus == 3) {
-        
+        [self publish];
     }
     if (self.WBstatus == 4) {
-        
+        [self publiWhwihtPhotoData];
     }
     if (self.WBstatus == 5) {
         [self huifupinglunWB];
@@ -145,11 +169,53 @@
 }
 //3发布微博
 -(void)publish{
-    
+    if ([self.textview.text isEqualToString:@""]) {
+        [MBProgressHUDTool showErrorWithStatus:@"请输入微博内容"];
+        return;
+    }
+    if (self.textview.text.length > 140) {
+        [MBProgressHUDTool showErrorWithStatus:@"输入的字数不能大于140个字"];
+        return;
+    }
+    [NetworkTool publishWB:[SettingTool getAccessToken] andwbText:self.textview.text successBlock:^(NSDictionary *resultDic){
+        [MBProgressHUDTool showSuccessWithStatus:@"发布成功"];
+        GetAppDelegate;
+        [appDelegate.navController popViewControllerAnimated:YES];
+    } error:^(NSError *error) {
+        [MBProgressHUDTool showSuccessWithStatus:@"发布失败"];
+    }];
 }
 //4发布微博图片
 -(void)publiWhwihtPhotoData{
-    
+    if ([self.textview.text isEqualToString:@""]) {
+        [MBProgressHUDTool showErrorWithStatus:@"请输入微博内容"];
+        return;
+    }
+    if (self.textview.text.length > 140) {
+        [MBProgressHUDTool showErrorWithStatus:@"输入的字数不能大于140个字"];
+        return;
+    }
+    NSMutableArray *formDataArray = [NSMutableArray array];
+    if (self.photoArray.count > 0) {
+        for (UIImage *img in self.photoArray) {
+            IWFormData *imgdata = [[IWFormData alloc]init];
+            imgdata.data = UIImageJPEGRepresentation(img, 0.000001);
+            imgdata.name = @"pic";
+            imgdata.mimeType = @"image/jpeg";
+            imgdata.filename = @"";
+            [formDataArray addObject:imgdata];
+        }
+    }else{
+        [self publish];
+        return;
+    }
+    [NetworkTool publishWBWithData:[SettingTool getAccessToken] andwbText:self.textview.text andDataArry:formDataArray successBlock:^(NSDictionary *resultDic){
+        [MBProgressHUDTool showSuccessWithStatus:@"发布成功"];
+        GetAppDelegate;
+        [appDelegate.navController popViewControllerAnimated:YES];
+    } error:^(NSError *error) {
+        [MBProgressHUDTool showSuccessWithStatus:@"发布失败"];
+    }];
 }
 //5回复评论
 -(void)huifupinglunWB{
@@ -168,11 +234,12 @@
     }];
 }
 
+
 #pragma mark
 -(void)addMoreImgWithTag:(NSInteger )tag{
     if (self.imgCount <3) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setBackgroundImage:[UIImage imageNamed:@"homepage_tupian"] forState:UIControlStateNormal];
+        [btn setBackgroundImage:[UIImage imageNamed:@"tupian"] forState:UIControlStateNormal];
         CGRect frame = self.firstImgBtn.frame;
         frame.origin.x = self.imgCount * (8+80)+8;
         btn.frame = frame;
@@ -265,6 +332,7 @@
     [btn setBackgroundImage:targetImage forState:UIControlStateNormal];
     [self addMoreImgWithTag:btn.tag];
     
+    [self.photoArray addObject:targetImage];
     //    BOOL success =[LocalStorage saveImage:targetImage WithName:imgName withUserName:[SettingTool getSessionUuid]];
     //    if (!success) {
     //        [MBProgressHUDTool showErrorWithStatus:@"图片获取失败，请在系统设置里增加相关权限"];

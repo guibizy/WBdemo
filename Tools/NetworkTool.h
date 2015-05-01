@@ -14,6 +14,7 @@ typedef void(^ErrorBlo)(NSError *error);
 
 @interface NetworkTool : NSObject
 
+
 //获取授权信息
 +(void)getAccessTokenWithURL:(NSDictionary *)dic
                 successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock;
@@ -89,6 +90,41 @@ typedef void(^ErrorBlo)(NSError *error);
 +(void)statusesDestroy:(NSString *)token
               andwbID:(long long)_id
          successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock;
+//发布一条微博
++(void)publishWB:(NSString *)token
+               andwbText:(NSString *)status
+          successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock;
+//发布一条有图片微博
++(void)publishWBWithData:(NSString *)token
+               andwbText:(NSString *)status
+             andDataArry:(NSArray *)photoArray
+    successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock;
+@end
 
 
+
+
+/**
+ *  用来封装文件数据的模型
+ */
+@interface IWFormData : NSObject
+/**
+ *  文件数据
+ */
+@property (nonatomic, strong) NSData *data;
+
+/**
+ *  参数名
+ */
+@property (nonatomic, copy) NSString *name;
+
+/**
+ *  文件名
+ */
+@property (nonatomic, copy) NSString *filename;
+
+/**
+ *  文件类型
+ */
+@property (nonatomic, copy) NSString *mimeType;
 @end

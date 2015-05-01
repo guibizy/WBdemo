@@ -13,6 +13,7 @@
 
 @implementation NetworkTool
 
+
 +(void)getAccessTokenWithURL:(NSDictionary *)dic successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
     [NetworkTool postWithURL:GET_access_token parameters:dic successBlock:successBlock error:errorBlock];
 }
@@ -130,6 +131,35 @@
                           @"id":@(_id)};
     [NetworkTool postWithURL:wb_PINGLUN_destroy parameters:dic successBlock:successBlock error:errorBlock];
 }
+
+
+//发布一条微博
++(void)publishWB:(NSString *)token andwbText:(NSString *)status successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSDictionary *dic = @{@"access_token":token,@"status":status};
+    [NetworkTool postWithURL:wb_FABU parameters:dic successBlock:successBlock error:errorBlock];
+}
+
+//发布一条有图片微博
++(void)publishWBWithData:(NSString *)token andwbText:(NSString *)status andDataArry:(NSArray *)photoArray successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSDictionary *dic = @{@"access_token":token,@"status":status};
+    // 1.创建请求管理对象
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 2.发送请求
+    [mgr POST:wb_FABU_pic parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData> totalFormData) {
+        for (IWFormData *formData in photoArray) {
+            [totalFormData appendPartWithFileData:formData.data name:formData.name fileName:formData.filename mimeType:formData.mimeType];
+        }
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (successBlock) {
+            successBlock(responseObject);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (errorBlock) {
+            errorBlock(error);
+        }
+    }];
+}
 #pragma mark -------
 + (void)getWithURL:(NSString *)url parameters:(NSDictionary *)par successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock {
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
@@ -173,6 +203,12 @@
     }];
 }
 
+
+
+
 @end
 
+@implementation IWFormData
 
+
+@end

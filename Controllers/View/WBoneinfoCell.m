@@ -13,6 +13,7 @@
 #import "AccountModel.h"
 #import "UIImageView+WebCache.h"
 #import "CommentsShowModel.h"
+#import "NSDate+Convenience.h"
 
 @interface WBoneinfoCell()
 
@@ -41,7 +42,7 @@
     }];
     
     self.screenNameLab.text = model.user.screen_name;
-    self.createdLab.text = model.created_at;
+    self.createdLab.text = [NSString stringWithFormat:@"%@",[NSDate dateFromStringInWeiBo:model.created_at]];
     self.textLab.text = model.text;
 }
 +(float)getCellHeight:(CommentsShowModel *)model{

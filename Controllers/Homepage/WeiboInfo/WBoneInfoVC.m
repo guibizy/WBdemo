@@ -48,6 +48,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *retweedTextLab;
 @property (weak, nonatomic) IBOutlet UIView *retweedImgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *retweedImgVHeight;
+@property (weak, nonatomic) IBOutlet UILabel *pinglunNumLab;
 
 
 @property (strong, nonatomic) IBOutlet UIView *secionView;
@@ -282,7 +283,7 @@
                 [ary addObject:comment];
             }
             [self.pinglunArray addObjectsFromArray:ary];
-            
+            self.pinglunNumLab.text = [NSString stringWithFormat:@"%d",self.pinglunArray.count];
         }
         [self.tableview reloadData];
     } error:^(NSError *error) {
@@ -311,10 +312,10 @@
     return 1;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 30;
+    return 40;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    self.secionView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 30);
+    self.secionView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 40);
     return self.secionView;
 }
 #pragma mark -onclick

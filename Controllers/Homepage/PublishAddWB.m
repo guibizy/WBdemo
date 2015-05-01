@@ -73,12 +73,14 @@
 }
 - (IBAction)pushtoPublish:(id)sender {
     PublishWB *add = [[PublishWB alloc]init];
+    [self removeView];
     add.WBstatus = 3;
     GetAppDelegate;
     [appDelegate.navController pushViewController:add animated:YES];
 }
 - (IBAction)pushtoPublishWithphoto:(id)sender {
     PublishWB *add = [[PublishWB alloc]init];
+    [self removeView];
     add.WBstatus = 4;
     GetAppDelegate;
     [appDelegate.navController pushViewController:add animated:YES];

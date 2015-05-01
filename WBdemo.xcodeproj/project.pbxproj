@@ -121,6 +121,8 @@
 		51FF9B561ACBF03B00076C5E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 51FF9B551ACBF03B00076C5E /* libsqlite3.dylib */; };
 		51FF9B5B1ACBF1DD00076C5E /* HomepageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FF9B591ACBF1DD00076C5E /* HomepageVC.m */; };
 		51FF9B5C1ACBF1DD00076C5E /* HomepageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51FF9B5A1ACBF1DD00076C5E /* HomepageVC.xib */; };
+		A4D275761AF31E780008C458 /* PublishAddWB.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D275741AF31E780008C458 /* PublishAddWB.m */; };
+		A4D275771AF31E780008C458 /* PublishAddWB.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D275751AF31E780008C458 /* PublishAddWB.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -347,6 +349,9 @@
 		51FF9B581ACBF1DD00076C5E /* HomepageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageVC.h; sourceTree = "<group>"; };
 		51FF9B591ACBF1DD00076C5E /* HomepageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepageVC.m; sourceTree = "<group>"; };
 		51FF9B5A1ACBF1DD00076C5E /* HomepageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomepageVC.xib; sourceTree = "<group>"; };
+		A4D275731AF31E780008C458 /* PublishAddWB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishAddWB.h; sourceTree = "<group>"; };
+		A4D275741AF31E780008C458 /* PublishAddWB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishAddWB.m; sourceTree = "<group>"; };
+		A4D275751AF31E780008C458 /* PublishAddWB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublishAddWB.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,6 +416,9 @@
 				5116DBF31ADE387F000C7563 /* PublishWB.h */,
 				5116DBF41ADE387F000C7563 /* PublishWB.m */,
 				5116DBF51ADE387F000C7563 /* PublishWB.xib */,
+				A4D275731AF31E780008C458 /* PublishAddWB.h */,
+				A4D275741AF31E780008C458 /* PublishAddWB.m */,
+				A4D275751AF31E780008C458 /* PublishAddWB.xib */,
 			);
 			name = Publish;
 			sourceTree = "<group>";
@@ -953,6 +961,7 @@
 				51FF9AD71ACBC1D900076C5E /* MBProgressHUD_37x-Checkmark.png in Resources */,
 				5112BFF61ACE3DDB002D05C7 /* UserInfoCell.xib in Resources */,
 				511BB3951ACD2C61008C8245 /* WeiBoShowCell.xib in Resources */,
+				A4D275771AF31E780008C458 /* PublishAddWB.xib in Resources */,
 				5112BFE61ACE2A90002D05C7 /* Homepage.xcassets in Resources */,
 				51B69E7A1AD62A8F00F339C8 /* WBoneInfoVC.xib in Resources */,
 				51FF9AD81ACBC1D900076C5E /* MBProgressHUD_37x-Checkmark@2x.png in Resources */,
@@ -1031,6 +1040,7 @@
 				5112BFF01ACE390A002D05C7 /* HomeUserInfoVC.m in Sources */,
 				511BB3561ACCC620008C8245 /* SettingTool.m in Sources */,
 				51FF9ACF1ACBC1D900076C5E /* AFHTTPSessionManager.m in Sources */,
+				A4D275761AF31E780008C458 /* PublishAddWB.m in Sources */,
 				51FF9AD01ACBC1D900076C5E /* AFNetworkReachabilityManager.m in Sources */,
 				51FF9B351ACBDE2900076C5E /* LocalStorage.m in Sources */,
 				51EB7EF51AD4DD1000B9722D /* UIView+MJExtension.m in Sources */,

@@ -9,6 +9,7 @@
 #import "CustomTabBar.h"
 
 #import "AppDelegate.h"
+#import "PublishAddWB.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface CustomTabBar () {
@@ -208,7 +209,8 @@
 	[self.view addSubview:slideBg];
 }
 -(void)moreBtnTab:(UIButton *)button{
-    
+    PublishAddWB *add = [[PublishAddWB alloc]init];
+    [add addViewForShare];
 }
 
 - (void)selectedTab:(UIButton *)button{

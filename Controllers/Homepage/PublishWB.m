@@ -98,6 +98,9 @@
         
     }
     if (self.WBstatus == 4) {
+        
+    }
+    if (self.WBstatus == 5) {
         [self huifupinglunWB];
     }
 }
@@ -140,7 +143,15 @@
         [MBProgressHUDTool showErrorWithStatus:@"网络连接错误"];
     }];
 }
-//4回复评论
+//3发布微博
+-(void)publish{
+    
+}
+//4发布微博图片
+-(void)publiWhwihtPhotoData{
+    
+}
+//5回复评论
 -(void)huifupinglunWB{
     if (self.oneAccountModel._id <= 0) {
         [MBProgressHUDTool showErrorWithStatus:@"回复失败"];

@@ -49,6 +49,9 @@
 @property (weak, nonatomic) IBOutlet UIView *retweedImgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *retweedImgVHeight;
 
+
+@property (strong, nonatomic) IBOutlet UIView *secionView;
+
 @property (strong, nonatomic) NSMutableArray *pinglunArray;
 
 @end
@@ -311,11 +314,8 @@
     return 30;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *sectionVie = [[UIView alloc]init]
-    ;
-    sectionVie.frame = CGRectMake(0, 0, SCREEN_WIDTH, 30);
-    sectionVie.backgroundColor = [UIColor blackColor];
-    return sectionVie;
+    self.secionView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 30);
+    return self.secionView;
 }
 #pragma mark -onclick
 - (IBAction)pushBackOnClick:(UIButton *)sender {

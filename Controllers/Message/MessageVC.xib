@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MessageVC">
             <connections>
+                <outlet property="tableview" destination="zF5-Bb-sVs" id="4uH-Ay-MiU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,16 +16,52 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zF5-Bb-sVs">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zF5-Bb-sVs">
                     <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJt-gm-uVj">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLY-wQ-ZKb">
+                            <rect key="frame" x="0.0" y="63" width="320" height="1"/>
+                            <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="syP-fJ-wXf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f53-uJ-0XA">
+                            <rect key="frame" x="142" y="20" width="36" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="12L-Zw-Eue"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="f53-uJ-0XA" secondAttribute="centerX" id="ARF-jX-QuZ"/>
+                        <constraint firstAttribute="trailing" secondItem="gLY-wQ-ZKb" secondAttribute="trailing" id="Aov-z5-aEo"/>
+                        <constraint firstItem="gLY-wQ-ZKb" firstAttribute="leading" secondItem="tJt-gm-uVj" secondAttribute="leading" id="bnF-JA-355"/>
+                        <constraint firstItem="f53-uJ-0XA" firstAttribute="top" secondItem="tJt-gm-uVj" secondAttribute="top" constant="20" id="imm-Cu-vYi"/>
+                        <constraint firstAttribute="height" constant="64" id="mOJ-xq-YUP"/>
+                        <constraint firstAttribute="bottom" secondItem="gLY-wQ-ZKb" secondAttribute="bottom" id="nCo-5S-pe6"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="tJt-gm-uVj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4sf-b9-3qx"/>
                 <constraint firstItem="zF5-Bb-sVs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="6tn-AO-97Y"/>
                 <constraint firstItem="zF5-Bb-sVs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EkG-Pg-VDi"/>
+                <constraint firstAttribute="trailing" secondItem="tJt-gm-uVj" secondAttribute="trailing" id="RT2-LY-gzq"/>
                 <constraint firstAttribute="bottom" secondItem="zF5-Bb-sVs" secondAttribute="bottom" constant="50" id="mOX-2p-HEF"/>
+                <constraint firstItem="tJt-gm-uVj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="oZ9-0e-fWi"/>
                 <constraint firstAttribute="trailing" secondItem="zF5-Bb-sVs" secondAttribute="trailing" id="xxc-Fa-iPs"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

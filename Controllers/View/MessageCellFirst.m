@@ -28,7 +28,18 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+}
+
+-(void)setCellStyleFromMessage:(NSInteger)row{
+    if (row == 0) {
+        self.titleLab.text = @"@我的";
+    }
+    if (row == 1) {
+        self.titleLab.text = @"评论";
+    }
+    if (row == 2) {
+        self.titleLab.text = @"赞";
+    }
 }
 
 @end

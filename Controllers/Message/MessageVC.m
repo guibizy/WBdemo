@@ -12,13 +12,16 @@
 
 @interface MessageVC ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+
 @end
 
 @implementation MessageVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.tableview.delegate = self;
+    self.tableview.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,17 +32,18 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellname = @"mseeagecellname";
     MessageCellFirst *cell = [tableView dequeueReusableCellWithIdentifier:cellname];
-    if (!cell) {
+    if (cell == nil) {
         [tableView registerNib:[UINib nibWithNibName:@"MessageCellFirst" bundle:nil] forCellReuseIdentifier:cellname];
         cell = [tableView dequeueReusableCellWithIdentifier:cellname];
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    [cell setCellStyleFromMessage:indexPath.row];
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 76;
+    return 56;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return 3;
 }
 @end

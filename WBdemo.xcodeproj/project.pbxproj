@@ -121,6 +121,10 @@
 		51FF9B561ACBF03B00076C5E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 51FF9B551ACBF03B00076C5E /* libsqlite3.dylib */; };
 		51FF9B5B1ACBF1DD00076C5E /* HomepageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FF9B591ACBF1DD00076C5E /* HomepageVC.m */; };
 		51FF9B5C1ACBF1DD00076C5E /* HomepageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51FF9B5A1ACBF1DD00076C5E /* HomepageVC.xib */; };
+		A44898001AF4693B003B1A00 /* MyMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A44897FE1AF4693B003B1A00 /* MyMessageVC.m */; };
+		A44898011AF4693B003B1A00 /* MyMessageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44897FF1AF4693B003B1A00 /* MyMessageVC.xib */; };
+		A44898051AF46B69003B1A00 /* MyMessageCellF.m in Sources */ = {isa = PBXBuildFile; fileRef = A44898031AF46B69003B1A00 /* MyMessageCellF.m */; };
+		A44898061AF46B69003B1A00 /* MyMessageCellF.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44898041AF46B69003B1A00 /* MyMessageCellF.xib */; };
 		A4D275761AF31E780008C458 /* PublishAddWB.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D275741AF31E780008C458 /* PublishAddWB.m */; };
 		A4D275771AF31E780008C458 /* PublishAddWB.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D275751AF31E780008C458 /* PublishAddWB.xib */; };
 /* End PBXBuildFile section */
@@ -349,6 +353,12 @@
 		51FF9B581ACBF1DD00076C5E /* HomepageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageVC.h; sourceTree = "<group>"; };
 		51FF9B591ACBF1DD00076C5E /* HomepageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepageVC.m; sourceTree = "<group>"; };
 		51FF9B5A1ACBF1DD00076C5E /* HomepageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomepageVC.xib; sourceTree = "<group>"; };
+		A44897FD1AF4693B003B1A00 /* MyMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMessageVC.h; sourceTree = "<group>"; };
+		A44897FE1AF4693B003B1A00 /* MyMessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMessageVC.m; sourceTree = "<group>"; };
+		A44897FF1AF4693B003B1A00 /* MyMessageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMessageVC.xib; sourceTree = "<group>"; };
+		A44898021AF46B69003B1A00 /* MyMessageCellF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMessageCellF.h; sourceTree = "<group>"; };
+		A44898031AF46B69003B1A00 /* MyMessageCellF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMessageCellF.m; sourceTree = "<group>"; };
+		A44898041AF46B69003B1A00 /* MyMessageCellF.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMessageCellF.xib; sourceTree = "<group>"; };
 		A4D275731AF31E780008C458 /* PublishAddWB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishAddWB.h; sourceTree = "<group>"; };
 		A4D275741AF31E780008C458 /* PublishAddWB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishAddWB.m; sourceTree = "<group>"; };
 		A4D275751AF31E780008C458 /* PublishAddWB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublishAddWB.xib; sourceTree = "<group>"; };
@@ -386,6 +396,9 @@
 				5112BFF71ACE6297002D05C7 /* MessageVC.h */,
 				5112BFF81ACE6297002D05C7 /* MessageVC.m */,
 				5112BFF91ACE6297002D05C7 /* MessageVC.xib */,
+				A44897FD1AF4693B003B1A00 /* MyMessageVC.h */,
+				A44897FE1AF4693B003B1A00 /* MyMessageVC.m */,
+				A44897FF1AF4693B003B1A00 /* MyMessageVC.xib */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -457,6 +470,9 @@
 				51055F121AD7A87C009C3DDF /* WBoneinfoCell.h */,
 				51055F131AD7A87C009C3DDF /* WBoneinfoCell.m */,
 				51055F141AD7A87C009C3DDF /* WBoneinfoCell.xib */,
+				A44898021AF46B69003B1A00 /* MyMessageCellF.h */,
+				A44898031AF46B69003B1A00 /* MyMessageCellF.m */,
+				A44898041AF46B69003B1A00 /* MyMessageCellF.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -947,6 +963,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5112C00A1ACE695C002D05C7 /* SearchVC.xib in Resources */,
+				A44898061AF46B69003B1A00 /* MyMessageCellF.xib in Resources */,
 				5112BFF11ACE390A002D05C7 /* HomeUserInfoVC.xib in Resources */,
 				51EB7EEE1AD4DD1000B9722D /* MJRefresh.bundle in Resources */,
 				51FF9ADF1ACBC1D900076C5E /* MBProgressHUD_Icon.png in Resources */,
@@ -966,6 +983,7 @@
 				51B69E7A1AD62A8F00F339C8 /* WBoneInfoVC.xib in Resources */,
 				51FF9AD81ACBC1D900076C5E /* MBProgressHUD_37x-Checkmark@2x.png in Resources */,
 				5112C0001ACE631F002D05C7 /* MessageCellFirst.xib in Resources */,
+				A44898011AF4693B003B1A00 /* MyMessageVC.xib in Resources */,
 				51EB7F0E1AD4ED9400B9722D /* Kal.bundle in Resources */,
 				51FF9ADE1ACBC1D900076C5E /* MBProgressHUD_Icon-Small@2x.png in Resources */,
 				51FF9ADB1ACBC1D900076C5E /* MBProgressHUD_error@3x.png in Resources */,
@@ -998,6 +1016,7 @@
 				51FF9B411ACBDE3B00076C5E /* FMDBFactory.m in Sources */,
 				51EB7ED91AD4C37D00B9722D /* AccountModel.m in Sources */,
 				51FF9B031ACBC3C700076C5E /* MBProgressHUDTool.m in Sources */,
+				A44898001AF4693B003B1A00 /* MyMessageVC.m in Sources */,
 				51EB7F101AD4ED9400B9722D /* KalLogic.m in Sources */,
 				5116DBFD1ADE3DBB000C7563 /* LocalStorage+Download.m in Sources */,
 				51FF9B2D1ACBDD6500076C5E /* NetworkTool.m in Sources */,
@@ -1063,6 +1082,7 @@
 				511BB3941ACD2C61008C8245 /* WeiBoShowCell.m in Sources */,
 				511BB3631ACD17D1008C8245 /* LoginWithOAuthVC.m in Sources */,
 				51B69E791AD62A8F00F339C8 /* WBoneInfoVC.m in Sources */,
+				A44898051AF46B69003B1A00 /* MyMessageCellF.m in Sources */,
 				5112BFFF1ACE631F002D05C7 /* MessageCellFirst.m in Sources */,
 				51EB7F151AD4ED9400B9722D /* NSDateAdditions.m in Sources */,
 				511BB35D1ACCEE27008C8245 /* NavigationController.m in Sources */,

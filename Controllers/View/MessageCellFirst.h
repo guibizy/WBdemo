@@ -10,4 +10,7 @@
 
 @interface MessageCellFirst : UITableViewCell
 
+
+-(void)setCellStyleFromMessage:(NSInteger )row;
+
 @end

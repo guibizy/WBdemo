@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -18,19 +18,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHz-X8-dJd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="So9-pd-tkJ">
-                                <rect key="frame" x="10" y="0.0" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="dAj-hC-kEY"/>
-                                    <constraint firstAttribute="width" constant="60" id="rfj-Qv-ZHi"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@我" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xa-0i-AZe">
-                                <rect key="frame" x="78" y="10" width="30" height="16"/>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
-                                <color key="textColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enter_icon" translatesAutoresizingMaskIntoConstraints="NO" id="BYa-G7-ICd">
                                 <rect key="frame" x="292" y="20" width="20" height="20"/>
                                 <constraints>
@@ -38,31 +25,41 @@
                                     <constraint firstAttribute="width" constant="20" id="awn-Zr-Nam"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="201-10-10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JW1-cF-C8I">
-                                <rect key="frame" x="244" y="10" width="68" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@我" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xa-0i-AZe">
+                                <rect key="frame" x="58" y="22" width="30" height="16"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
+                                <color key="textColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGR-Qw-bIX">
-                                <rect key="frame" x="78" y="34" width="36" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNp-02-n9Q">
+                                <rect key="frame" x="0.0" y="58" width="320" height="1"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="i0Q-9B-9jX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="So9-pd-tkJ">
+                                <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dAj-hC-kEY"/>
+                                    <constraint firstAttribute="width" constant="40" id="rfj-Qv-ZHi"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TGR-Qw-bIX" firstAttribute="leading" secondItem="So9-pd-tkJ" secondAttribute="trailing" constant="8" id="1pn-V0-1AY"/>
-                            <constraint firstItem="TGR-Qw-bIX" firstAttribute="top" secondItem="9xa-0i-AZe" secondAttribute="bottom" constant="8" id="HV8-8F-ffh"/>
+                            <constraint firstAttribute="trailing" secondItem="ZNp-02-n9Q" secondAttribute="trailing" id="7bz-Bh-IRT"/>
                             <constraint firstAttribute="centerY" secondItem="So9-pd-tkJ" secondAttribute="centerY" id="Mmn-cJ-RLT"/>
                             <constraint firstItem="9xa-0i-AZe" firstAttribute="leading" secondItem="So9-pd-tkJ" secondAttribute="trailing" constant="8" id="ULh-WF-4kL"/>
+                            <constraint firstAttribute="bottom" secondItem="ZNp-02-n9Q" secondAttribute="bottom" id="Vu0-xN-uSz"/>
                             <constraint firstAttribute="trailing" secondItem="BYa-G7-ICd" secondAttribute="trailing" constant="8" id="cxx-0d-HhR"/>
                             <constraint firstAttribute="centerY" secondItem="BYa-G7-ICd" secondAttribute="centerY" id="kYe-lg-WkF"/>
-                            <constraint firstItem="So9-pd-tkJ" firstAttribute="top" secondItem="9xa-0i-AZe" secondAttribute="top" constant="-10" id="lMs-nF-Oeg"/>
-                            <constraint firstItem="JW1-cF-C8I" firstAttribute="centerY" secondItem="9xa-0i-AZe" secondAttribute="centerY" id="pEG-tV-r1r"/>
-                            <constraint firstAttribute="trailing" secondItem="JW1-cF-C8I" secondAttribute="trailing" constant="8" id="tmw-7d-tie"/>
+                            <constraint firstAttribute="centerY" secondItem="9xa-0i-AZe" secondAttribute="centerY" id="lz7-Xh-qnC"/>
                             <constraint firstItem="So9-pd-tkJ" firstAttribute="leading" secondItem="HHz-X8-dJd" secondAttribute="leading" constant="10" id="wl9-IS-LzW"/>
+                            <constraint firstItem="ZNp-02-n9Q" firstAttribute="leading" secondItem="HHz-X8-dJd" secondAttribute="leading" id="xvP-Ix-BLF"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -74,13 +71,11 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="contentLab" destination="TGR-Qw-bIX" id="MQg-GV-VTe"/>
                 <outlet property="iconImg" destination="BYa-G7-ICd" id="GMo-rK-SXZ"/>
                 <outlet property="photoImg" destination="So9-pd-tkJ" id="sTY-wj-SsE"/>
-                <outlet property="timeLab" destination="JW1-cF-C8I" id="nhy-8I-64A"/>
                 <outlet property="titleLab" destination="9xa-0i-AZe" id="Y1L-lX-9Sv"/>
             </connections>
-            <point key="canvasLocation" x="294" y="229"/>
+            <point key="canvasLocation" x="294" y="227"/>
         </tableViewCell>
     </objects>
     <resources>

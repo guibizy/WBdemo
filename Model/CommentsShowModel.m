@@ -26,6 +26,7 @@
         self.text = @"";
         self.source = @"";
         self.user = [[AccountUserModel alloc]init];
+        self.status = [[AccountModel alloc]init];
     }
     return self;
 }
@@ -41,6 +42,11 @@
     NSDictionary *serdic = dic[@"user"];
     if (serdic != nil) {
         [self.user setDic:serdic];
+    }
+    
+    NSDictionary *status = dic[@"status"];
+    if (status != nil) {
+        [self.status setDic:status];
     }
 }
 

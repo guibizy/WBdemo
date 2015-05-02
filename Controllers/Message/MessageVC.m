@@ -9,6 +9,7 @@
 #import "MessageVC.h"
 
 #import "MessageCellFirst.h"
+#import "MyMessageVC.h"
 
 @interface MessageVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -45,5 +46,19 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 3;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        MyMessageVC *my = [[MyMessageVC alloc]init];
+        my.status = 1;
+        GetAppDelegate;
+        [appDelegate.navController pushViewController:my animated:YES];
+    }
+    if (indexPath.row == 1) {
+        MyMessageVC *my = [[MyMessageVC alloc]init];
+        my.status = 2;
+        GetAppDelegate;
+        [appDelegate.navController pushViewController:my animated:YES];
+    }
 }
 @end

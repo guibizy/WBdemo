@@ -10,4 +10,6 @@
 
 @interface MyMessageVC : UIViewController
 
+@property (assign, nonatomic)NSInteger status;
+
 @end

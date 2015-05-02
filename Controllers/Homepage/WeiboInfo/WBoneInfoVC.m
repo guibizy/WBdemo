@@ -290,7 +290,7 @@
                 [ary addObject:comment];
             }
             [self.pinglunArray addObjectsFromArray:ary];
-            self.dianzanLab.text = [NSString stringWithFormat:@"%d",self.pinglunArray.count];
+            self.pinglunNumLab.text = [NSString stringWithFormat:@"%d",self.pinglunArray.count];
         }
         [self.tableview reloadData];
     } error:^(NSError *error) {

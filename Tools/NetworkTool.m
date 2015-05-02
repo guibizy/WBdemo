@@ -160,6 +160,17 @@
         }
     }];
 }
+//@
++(void)getMinePinglun:(NSString *)token successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSDictionary *dic = @{@"access_token":token};
+    [NetworkTool getWithURL:wb_mypinglun parameters:dic successBlock:successBlock error:errorBlock];
+}
+
+//
++(void)getMinePinglunToMe:(NSString *)token successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock{
+    NSDictionary *dic = @{@"access_token":token};
+    [NetworkTool getWithURL:wb_mypinglun_to_me parameters:dic successBlock:successBlock error:errorBlock];
+}
 #pragma mark -------
 + (void)getWithURL:(NSString *)url parameters:(NSDictionary *)par successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock {
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];

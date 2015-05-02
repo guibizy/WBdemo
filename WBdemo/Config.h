@@ -189,6 +189,30 @@
  ad	object array	微博流内的推广微博ID
  */
 #define wb_onewb [NSString stringWithFormat:@"%@/2/statuses/show.json", HTTP_URL]
+//获取最新的提到当前登录用户的评论，即@我的评论
+/**
+ source	false	string	采用OAuth授权方式不需要此参数，其他授权方式为必填参数，数值为应用的AppKey。
+ access_token	false	string	采用OAuth授权方式为必填参数，其他授权方式不需要此参数，OAuth授权后获得。
+ since_id	false	int64	若指定此参数，则返回ID比since_id大的评论（即比since_id时间晚的评论），默认为0。
+ max_id	false	int64	若指定此参数，则返回ID小于或等于max_id的评论，默认为0。
+ count	false	int	单页返回的记录条数，默认为50。
+ page	false	int	返回结果的页码，默认为1。
+ filter_by_author	false	int	作者筛选类型，0：全部、1：我关注的人、2：陌生人，默认为0。
+ filter_by_source	false	int	来源筛选类型，0：全部、1：来自微博的评论、2：来自微群的评论，默认为0。
+ */
+#define wb_mypinglun [NSString stringWithFormat:@"%@/2/comments/mentions.json", HTTP_URL]
+//获取当前登录用户所接收到的评论列表
+/**
+ source	false	string	采用OAuth授权方式不需要此参数，其他授权方式为必填参数，数值为应用的AppKey。
+ access_token	false	string	采用OAuth授权方式为必填参数，其他授权方式不需要此参数，OAuth授权后获得。
+ since_id	false	int64	若指定此参数，则返回ID比since_id大的评论（即比since_id时间晚的评论），默认为0。
+ max_id	false	int64	若指定此参数，则返回ID小于或等于max_id的评论，默认为0。
+ count	false	int	单页返回的记录条数，默认为50。
+ page	false	int	返回结果的页码，默认为1。
+ filter_by_author	false	int	作者筛选类型，0：全部、1：我关注的人、2：陌生人，默认为0。
+ filter_by_source	false	int	来源筛选类型，0：全部、1：来自微博的评论、2：来自微群的评论，默认为0。
+ */
+#define wb_mypinglun_to_me [NSString stringWithFormat:@"%@/2/comments/to_me.json", HTTP_URL]
 
 
 #endif

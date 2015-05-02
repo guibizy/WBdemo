@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 74td. All rights reserved.
 //
 
-#define cellHeight 160
+#define cellHeight 168
 
 
 #import "MyMessageCellF.h"
@@ -15,6 +15,7 @@
 #import "AccountUserModel.h"
 #import "CommentsShowModel.h"
 #import "UIImageView+WebCache.h"
+#import "NSDate+Convenience.h"
 
 @interface MyMessageCellF()
 
@@ -53,7 +54,7 @@
     self.oneCommentsModel = model;
     
     self.screenNameLab.text = model.user.screen_name;
-    self.createdLab.text = model.created_at;
+    self.createdLab.text = [NSString stringWithFormat:@"%@",[NSDate dateFromStringInWeiBo:model.created_at]];
     NSRange rangF = [model.source rangeOfString:@"\">"];
     NSInteger loc = rangF.location + rangF.length;
     if (rangF.location != NSNotFound) {
@@ -72,6 +73,8 @@
     //头像
     [self.statusImg sd_setImageWithURL:[NSURL URLWithString:model.status.user.profile_image_url] placeholderImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",model.status.user.profile_image_url]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
     }];
+    self.statusNameLab.text = model.status.user.screen_name;
+    self.statusComentLab.text = model.status.text;
     
 }
 +(float)getCellHeight:(CommentsShowModel *)model{

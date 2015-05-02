@@ -99,6 +99,16 @@ typedef void(^ErrorBlo)(NSError *error);
                andwbText:(NSString *)status
              andDataArry:(NSArray *)photoArray
     successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock;
+//获取最新的提到当前登录用户的评论，即@我的评论
++(void)getMinePinglun:(NSString *)token
+            successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock;
+//获取当前登录用户所接收到的评论列表
++(void)getMinePinglunToMe:(NSString *)token
+         successBlock:(SuccessBlo)successBlock error:(ErrorBlo)errorBlock;
+
+
+
+
 @end
 
 

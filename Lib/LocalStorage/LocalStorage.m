@@ -2,8 +2,6 @@
 //  LocalStorage.m
 //  UMC
 //
-//  Created by 悦讯科技  on 13-7-9.
-//  Copyright (c) 2013年 shihui. All rights reserved.
 //
 
 #import "LocalStorage.h"

@@ -2,8 +2,7 @@
 //  FMDBFactory.m
 //  chaozhou
 //
-//  Created by 悦讯科技  on 13-7-12.
-//  Copyright (c) 2013年 悦讯科技 . All rights reserved.
+
 //
 
 #import "FMDBFactory.h"

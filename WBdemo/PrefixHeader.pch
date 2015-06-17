@@ -22,7 +22,7 @@
 //#define kRedirectURI    @"http://www.sina.com"
 
 #define gAppKey         @"1298757126"
-#define gAppSecrect     @"e1ae010eac19c5ea11aff2432a444b81"
+#define gAppSecrect  	   @"e1ae010eac19c5ea11aff2432a444b81"
 #define gRedirectURI    @"https://api.weibo.com/oauth2/default.html"
 
 #endif
